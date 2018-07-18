@@ -21,7 +21,8 @@ require_once 'db.php';
     <meta name="author" content="codepixer">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
     <title>SAG - Secretaría de Agricultura y Ganaderia - Gobierno de la República de Honduras</title>
 
     <!-- CSS ============================================= -->
@@ -35,6 +36,16 @@ require_once 'db.php';
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/mainlogin.css">
     <link rel="stylesheet" href="../css/util.css">
+
+    <!--Para crear la tabla paginada-->
+    <link rel="stylesheet" href="../css/jquery.dataTables.min.css">
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready( function () {
+            $('#example').DataTable();
+        } );
+    </script>
 
     <link rel="stylesheet" href="../css/home_page_users.css">
 
@@ -155,8 +166,7 @@ require_once 'db.php';
                                     PRODUCTORES
                                 </span>
 
-                                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar por nombre..">
-                                <table id="example" class="table table-striped table-bordered" style="width:100%">
+                                <table id="example" class="table table-striped table-bordered display" style="width:100%">
                                     <thead>
                                         <tr>
                                             <th>Codigo Productor</th>
@@ -166,7 +176,6 @@ require_once 'db.php';
                                             <th>Comunidad</th>
                                             <th>Zona</th>
                                             <th>Modificar</th>
-                                            <th>Dar de baja</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -240,7 +249,6 @@ require_once 'db.php';
         </div>
     </footer>
 
-    <script src="../js/vendor/jquery-2.2.4.min.js"></script>
     <script src="../js/vendor/bootstrap.min.js"></script>
     <script src="../js/easing.min.js"></script>
     <script src="../js/hoverIntent.js"></script>
