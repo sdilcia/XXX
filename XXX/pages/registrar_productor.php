@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $validation_err = "Por favor llene todos los campos.";
     } else{
         // Prepare a select statement
-        $sql = "SELECT num_productores FROM tbl_zona WHERE Codigo_zona = ?";
+        $sql = "SELECT codigo_correlativo FROM tbl_zona WHERE Codigo_zona = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -107,7 +107,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if(!empty($codigo_productor) && empty($validation_err) && !empty($save_productor)){
         $zona = $_POST['cboZona'];
-        $sql = "UPDATE tbl_zona SET num_productores = (num_productores + 1) WHERE (codigo_zona =  '$zona') ";
+        $sql = "UPDATE tbl_zona SET codigo_correlativo = (num_productores + 1) WHERE (codigo_zona =  '$zona') ";
          
         if ($link->query($sql) === TRUE) {
             header("location: home_tecnico.php");
