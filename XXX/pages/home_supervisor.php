@@ -1,3 +1,21 @@
+<?php
+// Initialize the session
+session_start();
+ 
+// If session variable is not set it will redirect to login page
+if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
+    header("location: login.php");
+    exit;
+}else if($_SESSION['tipo_usuario'] == 1){
+    header("location: home_administrador.php");
+    exit;
+}else if($_SESSION['tipo_usuario'] == 3){
+    header("location: home_tecnico.php");
+    exit;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 

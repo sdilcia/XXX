@@ -1,3 +1,92 @@
+<?php
+// Include config file
+require_once 'db.php';
+ 
+// Define variables and initialize with empty values
+$username = $password = "";
+$username_err = $password_err = "";
+
+
+ 
+// Processing form data when form is submitted
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+ 
+    // Check if username is empty
+    if(empty(trim($_POST["user"]))){
+        $username_err = 'Por favor ingrese su nombre de usuario.';
+    } else{
+        $username = trim($_POST["user"]);
+    }
+    
+    // Check if password is empty
+    if(empty(trim($_POST['contrasenia']))){
+        $username_err = 'Por favor ingrese su contraseña.';
+    } else{
+        $password = trim($_POST['contrasenia']);
+    }
+    
+    // Validate credentials
+    if(empty($username_err) && empty($password_err)){
+        // Prepare a select statement
+        $sql = "SELECT username, contrasenia, codigo_tipo_usuario FROM tbl_usuario WHERE username = ?";
+        
+        if($stmt = mysqli_prepare($link, $sql)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "s", $param_username);
+            
+            // Set parameters
+            $param_username = $username;
+            
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt)){
+                // Store result
+                mysqli_stmt_store_result($stmt);
+                
+                // Check if username exists, if yes then verify password
+                if(mysqli_stmt_num_rows($stmt) == 1){                    
+                    // Bind result variables
+                    mysqli_stmt_bind_result($stmt, $username, $hashed_password, $tipo_usuario);
+                    if(mysqli_stmt_fetch($stmt)){
+                        if(password_verify($password, $hashed_password)){
+                            /* Password is correct, so start a new session and
+                            save the username to the session */
+                            session_start();
+                            $_SESSION['username'] = $username;
+                            $_SESSION['tipo_usuario'] = $tipo_usuario;
+                            if($tipo_usuario == 1){
+                                header("location: home_admin.php");
+
+                            }
+                            else if($tipo_usuario == 2){
+                                header("location: home_supervisor.php");
+                            }
+                            else if($tipo_usuario == 3){
+                                header("location: home_tecnico.php");
+                            }
+                                  
+                        } else{
+                            // Display an error message if password is not valid
+                            $username_err = 'Usuario o contraseña incorrectos.';
+                        }
+                    }
+                } else{
+                    // Display an error message if username doesn't exist
+                    $username_err = 'Usuario o contraseña incorrectos';
+                }
+            } else{
+                echo "Oops! Algo salió mal. Por favor intenta más tarde.";
+            }
+        }
+        
+        // Close statement
+        mysqli_stmt_close($stmt);
+    }
+    
+    // Close connection
+    mysqli_close($link);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -60,7 +149,7 @@
         <div class="bg-contact2" style="background-image: url('../img/cacao2.jpg');">
             <div class="container-contact2">
                 <div class="wrap-contact2">
-                    <form class="contact2-form validate-form">
+                <form class="contact2-form validate-form" method="POST"> 
                         <span class="contact2-form-title">
                             Iniciar Sesión
                         </span>
@@ -78,10 +167,11 @@
                         <div class="container-contact2-form-btn">
                             <div class="wrap-contact2-form-btn">
                                 <div class="contact2-form-bgbtn"></div>
-                                <button class="contact2-form-btn" style="border-color: rgb(6, 26, 6)">
-                                    Iniciar Sesión
-                                </button>
+                                <input type="submit" value="Iniciar Sesión" class="btn contact2-form-btn" style="border-color: rgb(6, 26, 6); background: transparent">
                             </div>
+                        </div>
+                        <div class="<?php echo (!empty($username_err)) ? 'has-error' : ''; ?>" style="color:red">               
+                            <br><span class="help-block"><?php echo $username_err; ?></span>
                         </div>
                     </form>
                 </div>
