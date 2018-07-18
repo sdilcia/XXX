@@ -157,89 +157,29 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>Tecnico</td>
-                                            <td>
-                                                <a href="modificar_llamadas.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>63</td>
-                                            <td>2011/07/25</td>
-                                            <td>Tecnico</td>
-                                            <td>
-                                                <a href="modificar_llamadas.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>Ashton Cox</td>
-                                            <td>Junior Technical Author</td>
-                                            <td>San Francisco</td>
-                                            <td>66</td>
-                                            <td>2009/01/12</td>
-                                            <td>Tecnico</td>
-                                            <td>
-                                                <a href="modificar_llamadas.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-
-                                        </tr>
-
-                                        </tr>
-                                        <tr>
-                                            <td>Cedric Kelly</td>
-                                            <td>Senior Javascript Developer</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2012/03/29</td>
-                                            <td>Tecnico</td>
-                                            <td>
-                                                <a href="modificar_llamadas.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>33</td>
-                                            <td>2008/11/28</td>
-                                            <td>Tecnico</td>
-                                            <td>
-                                                <a href="modificar_llamadas.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-
-                                        </tr>
-                                        </tr>
-                                        <tr>
-                                            <td>Brielle Williamson</td>
-                                            <td>Integration Specialist</td>
-                                            <td>New York</td>
-                                            <td>61</td>
-                                            <td>2012/12/02</td>
-                                            <td>Tecnico</td>
-                                            <td>
-                                                <a href="modificar_llamadas.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-
-                                        </tr>
-                                        </tr>
-
-                                    </tbody>
+            <?php
+           include("conexion.php");
+            $query="SELECT * FROM tbl_llamadas";
+            $resultado=$conexion->query($query);
+            while($row=$resultado->fetch_assoc()){
+                ?>
+               <tr>
+                   <td><?php echo $row['fecha_llamada']?></td>
+                   <td><?php echo $row['numero_llamadas']?></td>
+                   <td><?php echo $row['observacion']?></td>
+                   <td><?php echo $row['codigo_productor']?></td>
+                   <td><?php echo $row['codigo_control_llamada']?></td>
+                   <td><?php echo $row['codigo_usuario']?></td>
+                   <td><a href="registro_llamadas.php">Nuevo</a></td>
+                   <td><a href="modificar_llamada.php?id_llamada=<?php echo $row['codigo_llamada'];?>">Modificar</a></td>
+                   <td><a href="eliminar_llamada.php?id_llamada=<?php echo $row['codigo_llamada'];?>">Eliminar</a></td>
+            </tr>
+                <?php  
+            }
+           ?>
+        
+           
+        </tbody>
                                     <tfoot>
                                         <tr>
                                             <th>Productor</th>
