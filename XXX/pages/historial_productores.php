@@ -1,3 +1,17 @@
+<?php
+// Initialize the session
+session_start();
+ 
+// If session variable is not set it will redirect to login page
+if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
+    header("location: login.php");
+    exit;
+}
+
+require_once 'db.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -43,10 +57,10 @@
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
                         <li class="menu-active">
-                            <a href="home_admin.php">Home</a>
+                            <a href="home_admin.html">Home</a>
                         </li>
                         <li>
-                            <a href="pages/login.php">Nombre de usuario</a>
+                            <a href="pages/login.html">Nombre de usuario</a>
                         </li>
 
                         <li>
@@ -89,35 +103,35 @@
                                     <button class="accordion">REPORTES</button>
                                     <div class="panel">
                                         <li>
-                                            <a href="reporte_zona.php">Reportes por zonas</a>
+                                            <a href="reporte_zona.html">Reportes por zonas</a>
                                         </li>
                                         <li>
-                                            <a href="reporte_semanal.php">Reporte semanal</a>
+                                            <a href="reporte_semanal.html">Reporte semanal</a>
                                         </li>
                                         <li>
-                                            <a href="reporte_mensual.php">Reportes mensual</a>
+                                            <a href="reporte_mensual.html">Reportes mensual</a>
                                         </li>
                                         <li>
-                                            <a href="reporte_llamadas.php">Reportes de llamadas</a>
+                                            <a href="reporte_llamadas.html">Reportes de llamadas</a>
                                         </li>
                                     </div>
 
                                     <button class="accordion">USUARIOS</button>
                                     <div class="panel">
                                         <li>
-                                            <a href="registar_usuario.php">Registrar usuario</a>
+                                            <a href="registar_usuario.html">Registrar usuario</a>
                                         </li>
                                         <li>
-                                            <a href="historial_usuarios.php">Historial de usuarios</a>
+                                            <a href="historial_usuarios.html">Historial de usuarios</a>
                                         </li>
                                     </div>
                                     <button class="accordion">ZONAS</button>
                                     <div class="panel">
                                         <li>
-                                            <a href="registar_zona.php">Registrar zona</a>
+                                            <a href="registar_zona.html">Registrar zona</a>
                                         </li>
                                         <li>
-                                            <a href="lista_zonas.php">Lista de zonas</a>
+                                            <a href="lista_zonas.html">Lista de zonas</a>
                                         </li>
                                     </div>
                                 </div>
@@ -145,111 +159,40 @@
                                 <table id="example" class="table table-striped table-bordered" style="width:100%">
                                     <thead>
                                         <tr>
+                                            <th>Codigo Productor</th>
                                             <th>Nombre</th>
-                                            <th>Cargo</th>
-                                            <th>Área de trabajo</th>
-                                            <th>Edad</th>
-                                            <th>Fecha de comienzo</th>
-                                            <th></th>
+                                            <th>Departamento</th>
+                                            <th>Municipio</th>
+                                            <th>Comunidad</th>
+                                            <th>Zona</th>
+                                            <th>Modificar</th>
                                             <th>Dar de baja</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>
-                                                <a href="modificar_productor.php">
+                                        <?php
+                                            $query="SELECT codigo_productor, nombre_productor, apellido_productor, departamento,
+                                                    municipio, comunidad, codigo_zona 
+                                             FROM tbl_productor";
+                                            $resultado=$link->query($query);
+                                            while($row=$resultado->fetch_assoc()){
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $row['codigo_productor']?></td>
+                                                <td><?php echo $row['nombre_productor'] ." ". $row['apellido_productor']?></td>
+                                                <td><?php echo $row['departamento']?></td>
+                                                <td><?php echo $row['municipio']?></td>
+                                                <td><?php echo $row['comunidad']?></td>
+                                                <td>Zona <?php echo $row['codigo_zona']?></td>
+                                                <td>
+                                                <a href="modificar_productor.php?id_productor=<?php echo $row['codigo_productor'];?>">
                                                     <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/deshabilitar.png" alt="deshabilitar" height="42" width="42" ) onclick="eliminarUsuario()"> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>63</td>
-                                            <td>2011/07/25</td>
-                                            <td>
-                                                <a href="modificar_productor.php">
-                                                    <img src="../img/elements/edit-file.png" alt="eliminar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/deshabilitar.png" alt="modificar" height="42" width="42" ) onclick="eliminarUsuario()"> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ashton Cox</td>
-                                            <td>Junior Technical Author</td>
-                                            <td>San Francisco</td>
-                                            <td>66</td>
-                                            <td>2009/01/12</td>
-                                            <td>
-                                                <a href="modificar_productor.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/deshabilitar.png" alt="modificar" height="42" width="42" ) onclick="eliminarUsuario()"> </td>
-                                        </tr>
-
-                                        </tr>
-                                        <tr>
-                                            <td>Cedric Kelly</td>
-                                            <td>Senior Javascript Developer</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2012/03/29</td>
-                                            <td>
-                                                <a href="modificar_productor.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/deshabilitar.png" alt="modificar" height="42" width="42" ) onclick="eliminarUsuario()"> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>33</td>
-                                            <td>2008/11/28</td>
-                                            <td>
-                                                <a href="modificar_productor.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/deshabilitar.png" alt="modificar" height="42" width="42" ) onclick="eliminarUsuario()"> </td>
-                                        </tr>
-                                        </tr>
-                                        <tr>
-                                            <td>Brielle Williamson</td>
-                                            <td>Integration Specialist</td>
-                                            <td>New York</td>
-                                            <td>61</td>
-                                            <td>2012/12/02</td>
-                                            <td>
-                                                <a href="modificar_productor.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/deshabilitar.png" alt="modificar" height="42" width="42" ) onclick="eliminarUsuario()"> </td>
-                                        </tr>
-                                        </tr>
-
+                                                </td>
+                                            </tr>
+                                            <?php  
+                                            }
+                                        ?>
                                     </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Nombre</th>
-                                            <th>Cargo</th>
-                                            <th>Área de trabajo</th>
-                                            <th>Edad</th>
-                                            <th>Fecha de comienzo</th>
-                                            <th></th>
-                                            <th></th>
-                                        </tr>
-                                    </tfoot>
                                 </table>
 
 

@@ -132,7 +132,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <a href="../index.php">Home</a>
                         </li>
                         <li>
-                            <a href="pages/login.php">Iniciar Sesión</a>
+                            <a href="login.php">Iniciar Sesión</a>
                         </li>
 
                         <li>
