@@ -43,10 +43,10 @@
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
                         <li class="menu-active">
-                            <a href="home_admin.html">Home</a>
+                            <a href="home_admin.php">Home</a>
                         </li>
                         <li>
-                            <a href="home_admin.html">Nombre de usuario</a>
+                            <a href="home_admin.php">Nombre de usuario</a>
                         </li>
 
                         <li>
@@ -89,36 +89,36 @@
                                     <button class="accordion">REPORTES</button>
                                     <div class="panel">
                                         <li>
-                                            <a href="reporte_zona.html">Reportes por zonas</a>
+                                            <a href="reporte_zona.php">Reportes por zonas</a>
                                         </li>
                                         <li>
-                                            <a href="reporte_semanal.html">Reporte semanal</a>
+                                            <a href="reporte_semanal.php">Reporte semanal</a>
                                         </li>
                                         <li>
-                                            <a href="reporte_mensual.html">Reportes mensual</a>
+                                            <a href="reporte_mensual.php">Reportes mensual</a>
                                         </li>
                                         <li>
-                                            <a href="reporte_llamadas.html">Reportes de llamadas</a>
+                                            <a href="reporte_llamadas.php">Reportes de llamadas</a>
                                         </li>
                                     </div>
 
                                     <button class="accordion">USUARIOS</button>
                                     <div class="panel">
                                         <li>
-                                            <a href="registar_usuario.html">Registrar usuario</a>
+                                            <a href="registar_usuario.php">Registrar usuario</a>
                                         </li>
                                         <li>
-                                            <a href="historial_usuarios.html">Planilla de empleados</a>
+                                            <a href="historial_usuarios.php">Planilla de empleados</a>
                                         </li>
                                     </div>
                                     <button class="accordion">ZONAS</button>
                                     <div class="panel">
                                         <li>
-                                            <a href="registar_zona.html">Registrar zona</a>
+                                            <a href="registar_zona.php">Registrar zona</a>
                                         </li>
 
                                         <li>
-                                                <a href="lista_zonas.html">Lista de zonas</a>
+                                                <a href="lista_zonas.php">Lista de zonas</a>
                                             </li>
 
                                     </div>

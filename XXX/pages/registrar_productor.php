@@ -40,10 +40,10 @@
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
                         <li class="menu-active">
-                            <a href="home_tecnico.html">Home</a>
+                            <a href="home_tecnico.php">Home</a>
                         </li>
                         <li>
-                            <a href="home_tecnico.html">Iniciar Sesión</a>
+                            <a href="home_tecnico.php">Iniciar Sesión</a>
                         </li>
 
                         <li>

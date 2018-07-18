@@ -44,10 +44,10 @@
                     <ul class="nav-menu">
                         <!--ESTOS ENLACES CAMBIAN DEPENDIENDO DEL USUARIO-->
                         <li class="menu-active">
-                            <a href="home_supervisor.html">Home</a>
+                            <a href="home_supervisor.php">Home</a>
                         </li>
                         <li>
-                            <a href="pages/login.html">Nombre de usuario</a>
+                            <a href="pages/login.php">Nombre de usuario</a>
                         </li>
 
                         <li>

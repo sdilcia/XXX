@@ -43,10 +43,10 @@
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
                         <li class="menu-active">
-                            <a href="home_tecnico.html">Home</a>
+                            <a href="home_tecnico.php">Home</a>
                         </li>
                         <li>
-                            <a href="home_tecnico.html">Nombre de usuario</a>
+                            <a href="home_tecnico.php">Nombre de usuario</a>
                         </li>
 
                         <li>
@@ -89,35 +89,35 @@
                                     <button class="accordion">REPORTES</button>
                                     <div class="panel">
                                         <li>
-                                            <a href="reporte_zona.html">Reportes por zonas</a>
+                                            <a href="reporte_zona.php">Reportes por zonas</a>
                                         </li>
                                         <li>
-                                            <a href="reporte_semanal.html">Reporte semanal</a>
+                                            <a href="reporte_semanal.php">Reporte semanal</a>
                                         </li>
                                         <li>
-                                            <a href="reporte_mensual.html">Reportes mensual</a>
+                                            <a href="reporte_mensual.php">Reportes mensual</a>
                                         </li>
                                         <li>
-                                            <a href="reporte_llamadas.html">Reportes de llamadas</a>
+                                            <a href="reporte_llamadas.php">Reportes de llamadas</a>
                                         </li>
                                     </div>
 
                                     <button class="accordion">CONTROL DE LLAMADAS</button>
                                     <div class="panel">
                                         <li>
-                                            <a href="control_llamadas.html">Registro de llamadas</a>
+                                            <a href="control_llamadas.php">Registro de llamadas</a>
                                         </li>
                                         <li>
-                                            <a href="historial_llamadas.html">Historial llamadas</a>
+                                            <a href="historial_llamadas.php">Historial llamadas</a>
                                         </li>
                                     </div>
                                     <button class="accordion">PRODUCTORES</button>
                                     <div class="panel">
                                         <li>
-                                            <a href="registrar_productor.html">Registrar productor</a>
+                                            <a href="registrar_productor.php">Registrar productor</a>
                                         </li>
                                         <li>
-                                            <a href="historial_productores.html">Listado de productores</a>
+                                            <a href="historial_productores.php">Listado de productores</a>
                                         </li>
                                     </div>
                                 </div>

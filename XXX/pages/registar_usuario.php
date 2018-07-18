@@ -40,10 +40,10 @@
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
                         <li class="menu-active">
-                            <a href="home_admin.html">Home</a>
+                            <a href="home_admin.php">Home</a>
                         </li>
                         <li>
-                            <a href="home_admin.html">Administrador</a>
+                            <a href="home_admin.php">Administrador</a>
                         </li>
 
                         <li>
