@@ -155,90 +155,32 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>
-                                                <a href="modificar_productor.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/deshabilitar.png" alt="deshabilitar" height="42" width="42" ) onclick="eliminarUsuario()"> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>63</td>
-                                            <td>2011/07/25</td>
-                                            <td>
-                                                <a href="modificar_productor.php">
-                                                    <img src="../img/elements/edit-file.png" alt="eliminar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/deshabilitar.png" alt="modificar" height="42" width="42" ) onclick="eliminarUsuario()"> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ashton Cox</td>
-                                            <td>Junior Technical Author</td>
-                                            <td>San Francisco</td>
-                                            <td>66</td>
-                                            <td>2009/01/12</td>
-                                            <td>
-                                                <a href="modificar_productor.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/deshabilitar.png" alt="modificar" height="42" width="42" ) onclick="eliminarUsuario()"> </td>
-                                        </tr>
-
-                                        </tr>
-                                        <tr>
-                                            <td>Cedric Kelly</td>
-                                            <td>Senior Javascript Developer</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2012/03/29</td>
-                                            <td>
-                                                <a href="modificar_productor.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/deshabilitar.png" alt="modificar" height="42" width="42" ) onclick="eliminarUsuario()"> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>33</td>
-                                            <td>2008/11/28</td>
-                                            <td>
-                                                <a href="modificar_productor.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/deshabilitar.png" alt="modificar" height="42" width="42" ) onclick="eliminarUsuario()"> </td>
-                                        </tr>
-                                        </tr>
-                                        <tr>
-                                            <td>Brielle Williamson</td>
-                                            <td>Integration Specialist</td>
-                                            <td>New York</td>
-                                            <td>61</td>
-                                            <td>2012/12/02</td>
-                                            <td>
-                                                <a href="modificar_productor.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/deshabilitar.png" alt="modificar" height="42" width="42" ) onclick="eliminarUsuario()"> </td>
-                                        </tr>
-                                        </tr>
-
-                                    </tbody>
+            <?php
+           include("conexion.php");
+            $query="SELECT * FROM tbl_productor";
+            $resultado=$conexion->query($query);
+            while($row=$resultado->fetch_assoc()){
+                ?>
+               <tr>
+                   <td><?php echo $row['nombre_productor']?></td>
+                   <td><?php echo $row['apellido_productor']?></td>
+                   <td><?php echo $row['numero_identidad']?></td>
+                   <td><?php echo $row['area']?></td>
+                   <td><?php echo $row['departamento']?></td>
+                   <td><?php echo $row['municipio']?></td>
+                   <td><?php echo $row['comunidad']?></td>
+                   <td><?php echo $row['organizacion']?></td>
+                   <td><?php echo $row['codigo_zona']?></td>
+                   <td><?php echo $row['codigo_estado']?></td>
+                   <td><a href="registro_productores.php">Nuevo</a></td>
+                   <td><a href="modificar_productor.php?id_productor=<?php echo $row['codigo_productor'];?>">Modificar</a></td>
+                   <td><a href="#">Darle Baja</a></td>
+            </tr>
+                <?php  
+            }
+           ?>
+            
+        </tbody>
                                     <tfoot>
                                         <tr>
                                             <th>Nombre</th>

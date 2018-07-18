@@ -153,85 +153,23 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-
-                                            <td>
-                                                <a href="modificar_zona.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/eliminar.png" alt="eliminar" height="42" width="42" ) onclick="eliminarZona()"> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-
-                                            <td>
-                                                <a href="modificar_zona.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/eliminar.png" alt="eliminar" height="42" width="42" ) onclick="eliminarZona()"> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ashton Cox</td>
-                                            <td>Junior Technical Author</td>
-                                            <td>San Francisco</td>
-
-                                            <td>
-                                                <a href="modificar_zona.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/eliminar.png" alt="eliminar" height="42" width="42" ) onclick="eliminarZona()">
-                                            </td>
-                                        </tr>
-
-                                        </tr>
-                                        <tr>
-                                            <td>Cedric Kelly</td>
-                                            <td>Senior Javascript Developer</td>
-                                            <td>Edinburgh</td>
-
-                                            <td>
-                                                <a href="modificar_zona.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/eliminar.png" alt="eliminar" height="42" width="42" ) onclick="eliminarZona()"> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-
-                                            <td>
-                                                <a href="modificar_zona.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/eliminar.png" alt="eliminar" height="42" width="42" ) onclick="eliminarZona()"> </td>
-                                        </tr>
-                                        </tr>
-                                        <tr>
-                                            <td>Brielle Williamson</td>
-                                            <td>Integration Specialist</td>
-                                            <td>New York</td>
-
-                                            <td>
-                                                <a href="modificar_zona.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/eliminar.png" alt="eliminar" height="42" width="42" ) onclick="eliminarZona()"> </td>
-                                        </tr>
-                                        </tr>
-
-                                    </tbody>
+            <?php
+           include("conexion.php");
+            $query="SELECT * FROM tbl_zona";
+            $resultado=$conexion->query($query);
+            while($row=$resultado->fetch_assoc()){
+                ?>
+               <tr>
+                   <td><?php echo $row['nombre_zona']?></td>
+                   <td><?php echo $row['codigo_tecnico_encargado']?></td>
+                   <td><a href="registro_zonas.php"><img id="logo"src="img/nuevo.png"></a></a></td>
+                   <td><a href="modificar_zona.php?Codigo_zona=<?php echo $row['codigo_zona'];?>"><img id="logo"src="img/actualizar.png"></a></td>
+                   <td><a href="eliminar_zona.php?Codigo_zona=<?php echo $row['codigo_zona'];?>"><img id="logo"src="img/eliminar.png"></a></td>
+            </tr>
+                <?php  
+            }
+           ?>
+        </tbody>
                                     <tfoot>
                                         <tr>
                                             <th>identificador de zona</th>
