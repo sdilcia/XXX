@@ -2567,9 +2567,30 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .footer-area {
   color: #fff;
-  padding-top: 220px;
+  padding-top: 40px;
   background: url(../img/footer-bg.jpg) center;
   background-size: cover;
+  
+}
+
+.menu-sombra{
+  height: 1px;
+  text-align: center;
+  padding: 30px;
+  margin: 1px 15px;
+}
+
+.siguenos{
+  color: #fff;
+}
+
+.home-contact2{
+  width: 600px;
+  padding: 72px 5px 90px 80px;
+  margin: 250px 120px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .footer-area h6 {
@@ -2612,8 +2633,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 .footer-redes{
 	font-size: 2em;
 	text-align: center;
-	margin: 20px;
-  padding: 20px;
+	
 }
 
 .single-footer-widget input {
@@ -2711,7 +2731,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 @media (max-width: 991.98px) {
   .single-footer-widget {
-    margin-bottom: 30px;
+    margin-bottom: 1px;
   }
 }
 
