@@ -175,6 +175,7 @@ require_once 'db.php';
                                             <th>Municipio</th>
                                             <th>Comunidad</th>
                                             <th>Zona</th>
+                                            <th>Control llamada</th>
                                             <th>Modificar</th>
                                         </tr>
                                     </thead>
@@ -193,6 +194,9 @@ require_once 'db.php';
                                                 <td><?php echo $row['municipio']?></td>
                                                 <td><?php echo $row['comunidad']?></td>
                                                 <td>Zona <?php echo $row['codigo_zona']?></td>
+                                                <td>
+                                                <a href="control_llamadas.php?id_productor=<?php echo $row['codigo_productor'];?>">Agregar</a>
+                                                </td>
                                                 <td>
                                                 <a href="modificar_productor.php?id_productor=<?php echo $row['codigo_productor'];?>">
                                                     <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
