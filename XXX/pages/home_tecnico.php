@@ -20,6 +20,8 @@
 			<link rel="stylesheet" href="../css/main.css">
 			<link rel="stylesheet" href="../css/util.css">
             <link rel="stylesheet" href="../css/mainlogin.css">
+            <link rel="stylesheet" href="../css/main-landing.css">
+
             
 		</head>
 		<body>
@@ -67,15 +69,16 @@
                                 <li><a href="historial_productores.php">Listado de productores</a></li>
                             </ul>
                           </li>				          
-                          <li><a href="#footerSection">Siguenos</a></li>
+                          <li><a href="#footerSection">Siguenos</a></li>                        
                           
-                          <li class="dropdown">
+                          <li class="dropdown" >
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                 <i class="fa fa-user fa-3x"></i>
                             </a>
                     
                             <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#"><i class="fa fa-user fa-fw"></i>Perfil</a>
+                                
+                                <li><a href="#"><i class="fa fa-user fa-fw"></i>Perfil Usuario</a>
                                 </li>
                                 <li><a href="../Manual de Usuario-IlumiArts.pdf" target="_blank"><i class="fa fa-gear fa-fw"></i>Manual de Usuario</a>
                                 </li>
@@ -93,9 +96,11 @@
 			  </header>
 				
 				<section class="banner-area" id="home">	
-                <div class="bg-contact2" style="background-image: url('../img/productor.jpg');">
+                <div class="bg-contact2 body-tecnico">
                     <div class="container-contact2">
                         <div class=" home-contact2">
+
+
                         <div class="w3-content w3-margin-top">
                             <div class="w3-row-padding">
 
@@ -105,11 +110,12 @@
                         <div class="w3-container">
                             <h5 class="w3-opacity">
                                 <b>REPORTES - USUARIOS - ZONAS</b>
-                            </h5>
+                            </h5><br>
                             <h6 class="w3-text-teal">
                                 <i class="fa fa-calendar fa-fw w3-margin-right"></i>2018
                                 <span class="w3-tag w3-teal w3-round">Lista Actulizada</span>
                             </h6>
+
                             <div class="row tile_count">
                                 <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count" style="margin-right: 95px">
                                     <span class="count_top">
@@ -117,7 +123,7 @@
                                     <div class="count">2500</div>
                                     <span class="count_bottom">
                                         <i class="green">4% </i> From last Week</span>
-                                </div>
+                                </div><hr>
 
                                 <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count" style="margin-right: 95px">
                                     <span class="count_top">
@@ -125,7 +131,7 @@
                                     <div class="count">2500</div>
                                     <span class="count_bottom">
                                         <i class="green">4% </i> From last Week</span>
-                                </div>
+                                </div><hr>
 
 
                                 <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count" style="margin-right: 95px">
@@ -135,7 +141,7 @@
                                     <span class="count_bottom">
                                         <i class="green">
                                             <i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
-                                </div>
+                                </div><hr>
 
                                 <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count" style="margin-right: 95px">
                                     <span class="count_top">
