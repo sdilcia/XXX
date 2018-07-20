@@ -39,107 +39,69 @@
         </div>
 
         <div class="container">
-            <div class="row align-items-center justify-content-between d-flex">
-                <nav id="nav-menu-container">
-                    <ul class="nav-menu">
-                        <li class="menu-active">
-                            <a href="home_tecnico.php">Home</a>
-                        </li>
-                        <li>
-                            <a href="home_tecnico.php">Nombre de usuario</a>
-                        </li>
+			    	<div class="row align-items-center justify-content-between d-flex">      
+				      <nav id="nav-menu-container">
+				        <ul class="nav-menu">
+                          <li class="menu-active"><a href="../index.php">Home</a></li>
+                          <li style="color:white;"><a> Reportes</a>
+                            <ul>
+                                <li>
+                                    <a href="reporte_zona.php">Reportes por zonas</a>
+                                </li>
+                                <li>
+                                    <a href="reporte_semanal.php">Reporte semanal</a>
+                                </li>
+                                <li>
+                                    <a href="reporte_mensual.php">Reportes mensual</a>
+                                </li>
+                                <li>
+                                    <a href="reporte_llamadas.php">Reportes de llamadas</a>
+                                </li>
+                            </ul>
+                          </li>
+                          <li style="color:white;"><a >CONTROL DE LLAMADAS</a> 
+                            <ul>
+                                <li><a href="control_llamadas.php">Registro de llamadas</a></li>
+                                <li><a href="historial_llamadas.php">Historial llamadas</a></li>
+                            </ul>                                  
+                          </li>
+                          <li style="color:white;"><a>PRODUCTORES</a> 
+                            <ul>
+                                <li><a href="registrar_productor.php">Registrar productor</a> </li>
+                                <li><a href="historial_productores.php">Listado de productores</a></li>
+                            </ul>
+                          </li>				          
+                          <li><a href="#footerSection">Siguenos</a></li>
+                          
+                          <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-user fa-3x"></i>
+                            </a>
+                    
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="#"><i class="fa fa-user fa-fw"></i>Perfil</a>
+                                </li>
+                                <li><a href="../Manual de Usuario-IlumiArts.pdf" target="_blank"><i class="fa fa-gear fa-fw"></i>Manual de Usuario</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="../index.php"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                                </li>
+                            </ul>
+                           </li>
 
-                        <li>
-                            <a href="#footerSection">Salir</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+
+				    	</ul>
+				      </nav>	    		
+			    	</div>
+			    </div>
     </header>
 
     <section class="banner-area" id="home">
 
         <div class="bg-contact2" style="background-image: url('../img/cacao2.jpg');">
-            <div class="container-contact2" style="margin-top: 127px">
-                <!-- Page Container -->
-                <div class="w3-content w3-margin-top" style="max-width:1400px;">
-
-                    <!-- The Grid -->
-                    <div class="w3-row-padding">
-
-                        <!-- Left Column ; margin-left: -170px -->
-                        <div class="w3-third" style="margin-top: 127px">
-
-                            <div class="w3-white w3-text-grey w3-card-4">
-
-                                <div class="w3-container ">
-
-                                    <h2>Jane Doe</h2>
-                                    <p>
-                                        <i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Tècnico</p>
-                                    <p>
-                                        <i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Zona</p>
-                                    <p>
-                                        <i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>Correo</p>
-                                    <p>
-                                        <i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>
-                                    <hr>
-
-                                    <button class="accordion">REPORTES</button>
-                                    <div class="panel">
-                                        <li>
-                                            <a href="reporte_zona.php">Reportes por zonas</a>
-                                        </li>
-                                        <li>
-                                            <a href="reporte_semanal.php">Reporte semanal</a>
-                                        </li>
-                                        <li>
-                                            <a href="reporte_mensual.php">Reportes mensual</a>
-                                        </li>
-                                        <li>
-                                            <a href="reporte_llamadas.php">Reportes de llamadas</a>
-                                        </li>
-                                    </div>
-
-                                    <button class="accordion">CONTROL DE LLAMADAS</button>
-                                    <div class="panel">
-                                        <li>
-                                            <a href="control_llamadas.php">
-                                                <p>Registro de llamadas</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="historial_llamadas.php">Historial llamadas</a>
-                                        </li>
-                                    </div>
-                                    <button class="accordion">PRODUCTORES</button>
-                                    <div class="panel">
-                                        <li>
-                                            <a href="registrar_productor.php">Registrar productor</a>
-                                        </li>
-                                        <li>
-                                            <a href="historial_productores.php">Listado de Productores</a>
-                                        </li>
-                                    </div>
-                                </div>
-
-                                <br>
-
-
-
-
-                            </div>
-                            <br>
-
-                            <!-- End Left Column -->
-                        </div>
-
-                        <!-- Right Column  style="width: 935px;"-->
-                        <div class="w3-twothird" style="margin-top: 127px">
-
-                            <div class="w3-container w3-card w3-white w3-margin-bottom">
-                                <span class="contact2-form-title" style="margin-top: 30px">
+            <div class="container-contact2">
+               <div class="wrap-contact2" style="width: 1210px;margin-left: 90px;margin-right: 90px;margin-bottom: 90px;height: 862px;">
+               <span class="contact2-form-title">
                                     Historial de Control de Llamada a Productores
                                 </span>
 
@@ -147,18 +109,20 @@
                                 <table id="example" class="table table-striped table-bordered" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>Productor</th>
-                                            <th>Control</th>
-                                            <th>Observaciones</th>
-                                            <th>Numero de llamadas</th>
                                             <th>Fecha</th>
-                                            <th>Tecnico</th>
-                                            <th></th>
+                                            <th>Número de llamadas</th>
+                                            <th>Observaciones</th>
+                                            <th>Productor</th>
+                                            <th>Código de llamada</th>
+                                            <th>Técnico</th>
+                                            <th>Nuevo</th>
+                                            <th>Modificar</th>
+                                            <th>Eliminar</th>
                                         </tr>
                                     </thead>
                                     <tbody>
             <?php
-           include("conexion.php");
+           include("db.php");
             $query="SELECT * FROM tbl_llamadas";
             $resultado=$conexion->query($query);
             while($row=$resultado->fetch_assoc()){
@@ -170,13 +134,11 @@
                    <td><?php echo $row['codigo_productor']?></td>
                    <td><?php echo $row['codigo_control_llamada']?></td>
                    <td><?php echo $row['codigo_usuario']?></td>
-                   <td><a href="registro_llamadas.php">Nuevo</a></td>
-                   <td><a href="modificar_llamada.php?id_llamada=<?php echo $row['codigo_llamada'];?>">Modificar</a></td>
-                   <td><a href="eliminar_llamada.php?id_llamada=<?php echo $row['codigo_llamada'];?>">Eliminar</a></td>
+                   <td><a href="registro_llamadas.php"><img src="../img/elements/agregar.jpg" alt="agregar" height="42" width="42" )></a></td>
+                   <td><a href="modificar_llamada.php?id_llamada=<?php echo $row['codigo_llamada'];?>"><img src="../img/elements/edit-file.png.jpg" alt="modificar" height="42" width="42" )></a></td>
+                   <td><a href="eliminar_llamada.php?id_llamada=<?php echo $row['codigo_llamada'];?>"><img src="../img/elements/eliminar.jpg" alt="eliminar" height="42" width="42" )></a></td>
             </tr>
-                <?php  
-            }
-           ?>
+                <?php  }  ?>
         
            
         </tbody>
@@ -193,20 +155,7 @@
                                     </tfoot>
                                 </table>
 
-
-
-                            </div>
-
-
-
-                            <!-- End Right Column -->
-                        </div>
-
-                        <!-- End Grid -->
-                    </div>
-
-                    <!-- End Page Container -->
-                </div>
+               </div>
             </div>
         </div>
     </section>

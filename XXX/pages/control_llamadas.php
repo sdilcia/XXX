@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="../css/linearicons.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap-select.css">
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap-select.min.css">
     <link rel="stylesheet" href="../css/magnific-popup.css">
     <link rel="stylesheet" href="../css/nice-select.css">
     <link rel="stylesheet" href="../css/animate.min.css">
@@ -21,9 +23,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/mainlogin.css">
     <link rel="stylesheet" href="../css/util.css">
-
     <link rel="stylesheet" href="../css/home_page_users.css">
-
 </head>
 
 <body>
@@ -39,124 +39,89 @@
         </div>
 
         <div class="container">
-            <div class="row align-items-center justify-content-between d-flex">
-                <nav id="nav-menu-container">
-                    <ul class="nav-menu">
-                        <li class="menu-active">
-                            <a href="home_tecnico.php">Home</a>
-                        </li>
-                        <li>
-                            <a href="home_tecnico.php">Nombre de usuario</a>
-                        </li>
+			    	<div class="row align-items-center justify-content-between d-flex">      
+				      <nav id="nav-menu-container">
+				        <ul class="nav-menu">
+                          <li class="menu-active"><a href="../index.php">Home</a></li>
+                          <li style="color:white;"><a> Reportes</a>
+                            <ul>
+                                <li>
+                                    <a href="reporte_zona.php">Reportes por zonas</a>
+                                </li>
+                                <li>
+                                    <a href="reporte_semanal.php">Reporte semanal</a>
+                                </li>
+                                <li>
+                                    <a href="reporte_mensual.php">Reportes mensual</a>
+                                </li>
+                                <li>
+                                    <a href="reporte_llamadas.php">Reportes de llamadas</a>
+                                </li>
+                            </ul>
+                          </li>
+                          <li style="color:white;"><a >CONTROL DE LLAMADAS</a> 
+                            <ul>
+                                <li><a href="control_llamadas.php">Registro de llamadas</a></li>
+                                <li><a href="historial_llamadas.php">Historial llamadas</a></li>
+                            </ul>                                  
+                          </li>
+                          <li style="color:white;"><a>PRODUCTORES</a> 
+                            <ul>
+                                <li><a href="registrar_productor.php">Registrar productor</a> </li>
+                                <li><a href="historial_productores.php">Listado de productores</a></li>
+                            </ul>
+                          </li>				          
+                          <li><a href="#footerSection">Siguenos</a></li>
+                          
+                          <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-user fa-3x"></i>
+                            </a>
+                    
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="#"><i class="fa fa-user fa-fw"></i>Perfil</a>
+                                </li>
+                                <li><a href="../Manual de Usuario-IlumiArts.pdf" target="_blank"><i class="fa fa-gear fa-fw"></i>Manual de Usuario</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="../index.php"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                                </li>
+                            </ul>
+                           </li>
 
-                        <li>
-                            <a href="#footerSection">Salir</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+
+				    	</ul>
+				      </nav>	    		
+			    	</div>
+			    </div>
     </header>
 
     <section class="banner-area" id="home">
 
         <div class="bg-contact2" style="background-image: url('../img/cacao2.jpg');">
-            <div class="container-contact2" style="margin-top: 127px">
-                <!-- Page Container -->
-                <div class="w3-content w3-margin-top" style="max-width:1400px;">
-
-                    <!-- The Grid -->
-                    <div class="w3-row-padding">
-
-                        <!-- Left Column ; margin-left: -170px -->
-                        <div class="w3-third" style="margin-top: 127px">
-
-                            <div class="w3-white w3-text-grey w3-card-4">
-
-                                <div class="w3-container ">
-
-                                    <h2>Jane Doe</h2>
-                                    <p>
-                                        <i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Tècnico</p>
-                                    <p>
-                                        <i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Zona</p>
-                                    <p>
-                                        <i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>Correo</p>
-                                    <p>
-                                        <i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>
-                                    <hr>
-
-                                    <button class="accordion">REPORTES</button>
-                                    <div class="panel">
-                                        <li>
-                                            <a href="reporte_zona.php">Reportes por zonas</a>
-                                        </li>
-                                        <li>
-                                            <a href="reporte_semanal.php">Reporte semanal</a>
-                                        </li>
-                                        <li>
-                                            <a href="reporte_mensual.php">Reportes mensual</a>
-                                        </li>
-                                        <li>
-                                            <a href="reporte_llamadas.php">Reportes de llamadas</a>
-                                        </li>
-                                    </div>
-
-                                    <button class="accordion">CONTROL DE LLAMADAS</button>
-                                    <div class="panel">
-                                        <li>
-                                            <a href="control_llamadas.php">Registro de llamadas</a>
-                                        </li>
-                                        <li>
-                                            <a href="historial_llamadas.php">Historial llamadas</a>
-                                        </li>
-                                    </div>
-                                    <button class="accordion">PRODUCTORES</button>
-                                    <div class="panel">
-                                        <li>
-                                            <a href="registrar_productor.php">Registrar productor</a>
-                                        </li>
-                                        <li>
-                                            <a href="historial_productores.php">Listado de productores</a>
-                                        </li>
-                                    </div>
-                                </div>
-
-                                <br>
-
-
-
-
-                            </div>
-                            <br>
-
-                            <!-- End Left Column -->
-                        </div>
-
-                        <!-- Right Column  style="width: 935px;"-->
-                        <div class="w3-twothird" style="margin-top: 127px">
-
-                            <div class="w3-container w3-card w3-white w3-margin-bottom">
-                                <span class="contact2-form-title" style="margin-top: 30px">
-                                    Registro de Control de Llamada a Productores
-                                </span>
-                                <div class="w3-container">
-                                    <form class="contact2-form validate-form">
+            <div class="container-contact2">
+                <div class="wrap-contact2">
+                         <form class="contact2-form validate-form">
+                         <span class="contact2-form-title">
+                            Registro de Control de Llamada a Productores
+                        </span>
                                         <div class="descripcion">
                                             <b>Productor:</b>
                                         </div>
                                         <div class="valor">
-                                            <select class="form-control" name="cboProductor">
-                                                <option value="-">Seleccione productor</option>
+                                        <select class="selectpicker" data-live-search="true">
+                                            
+                                        <option data-tokens="Seleccione Productor" value="-">Seleccione productor</option>
                                                 <option value="0">Productor 1</option>
                                                 <option value="1">Productor 2</option>
                                                 <option value="2">Productor 3</option>
                                             </select>
                                         </div>
+
                                         <br>
 
                                         <div class="descripcion">
-                                            <b>Numero de llamadas realizadas</b>
+                                            <b>Número de llamadas realizadas</b>
                                         </div>
                                         <div class="valor">
                                             <input type="text" name="txtNumeroLlamadas" class="form-control">
@@ -193,21 +158,9 @@
                                             </div>
                                         </div>
                                     </form>
-                                    <hr>
-                                </div>
 
-                            </div>
-
-
-
-                            <!-- End Right Column -->
-                        </div>
-
-                        <!-- End Grid -->
-                    </div>
-
-                    <!-- End Page Container -->
                 </div>
+                
             </div>
         </div>
     </section>
@@ -241,6 +194,8 @@
 
     <script src="../js/vendor/jquery-2.2.4.min.js"></script>
     <script src="../js/vendor/bootstrap.min.js"></script>
+    <script src="../js/vendor/bootstrap-select.js"></script>
+    <script src="../js/vendor/bootstrap-select.min.js"></script>
     <script src="../js/easing.min.js"></script>
     <script src="../js/hoverIntent.js"></script>
     <script src="../js/superfish.min.js"></script>
@@ -272,6 +227,26 @@
                 }
             });
         }
+
+        //Buscador para el select de productores
+        function buscarSelect()
+            {
+                // creamos un variable que hace referencia al select
+                var select=document.getElementById("elementos");
+            
+                // obtenemos el valor a buscar
+                var buscar=document.getElementById("buscar").value;
+            
+                // recorremos todos los valores del select
+                for(var i=1;i<select.length;i++)
+                {
+                    if(select.options[i].text==buscar)
+                    {
+                        // seleccionamos el valor que coincide
+                        select.selectedIndex=i;
+                    }
+                }
+            }
     </script>
 
 
