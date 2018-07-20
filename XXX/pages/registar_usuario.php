@@ -26,35 +26,74 @@
 
 <body>
 
-    <header id="header" id="home">
+     <header id="header" id="home">
 
-        <div class="header-top">
-            <div class="header-top-right no-padding">
-                <img src="../img/Logo SAG Horizontal nuevo.png" alt="Logo SAG" class="header-sag">
-                <img src="../img/infoagro textual.png" alt="Logo INFOAGRO" class="header-sag">
-                <img src="../img/LOGO FHIA.jpg" alt="Logo FHIA" class="header-fhia">
-            </div>
-        </div>
+<div class="header-top">
+      <div class="header-top-right no-padding">
+        <img src="../img/Logo SAG Horizontal nuevo.png" alt="Logo SAG" class="header-sag">
+        <img src="../img/infoagro textual.png" alt="Logo INFOAGRO" class="header-sag"> 
+        <img src="../img/LOGO FHIA.jpg" alt="Logo FHIA" class="header-fhia">
+    </div>
+</div>		
+          
+<div class="container">
+    <div class="row align-items-center justify-content-between d-flex">      
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="home_admin.php">Home</a></li>
+          <li style="color:white;"><a> Reportes</a>
+            <ul>
+                <li>
+                    <a href="reporte_zona.php">Reportes por zonas</a>
+                </li>
+                <li>
+                    <a href="reporte_semanal.php">Reporte semanal</a>
+                </li>
+                <li>
+                    <a href="reporte_mensual.php">Reportes mensual</a>
+                </li>
+                <li>
+                    <a href="reporte_llamadas.php">Reportes de llamadas</a>
+                </li>
+            </ul>
+          </li>
+          <li style="color:white;"><a >USUARIOS</a> 
+            <ul>
+                <li><a href="registar_usuario.php">Registrar usuario</a></li>
+                <li><a href="historial_usuarios.php">Planilla de empleados</a></li>
+            </ul>                                  
+          </li>
+          <li style="color:white;"><a>ZONAS</a> 
+            <ul>
+                <li><a href="registar_zona.php">Registrar zona</a> </li>
+                <li><a href="lista_zonas.php">Listado de zonas</a></li>
+            </ul>
+          </li>				          
+          <li><a href="#footerSection">Siguenos</a></li>                        
+          
+          <li class="dropdown" >
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user fa-3x"></i>
+            </a>
+    
+            <ul class="dropdown-menu dropdown-user">
+                
+                <li><a href="#"><i class="fa fa-user fa-fw"></i>Perfil Usuario</a>
+                </li>
+                <li><a href="../Manual de Usuario-IlumiArts.pdf" target="_blank"><i class="fa fa-gear fa-fw"></i>Manual de Usuario</a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="../index.php"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                </li>
+            </ul>
+           </li>
 
-        <div class="container">
-            <div class="row align-items-center justify-content-between d-flex">
-                <nav id="nav-menu-container">
-                    <ul class="nav-menu">
-                        <li class="menu-active">
-                            <a href="home_admin.php">Home</a>
-                        </li>
-                        <li>
-                            <a href="home_admin.php">Administrador</a>
-                        </li>
 
-                        <li>
-                            <a href="#footerSection">Salir</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+        </ul>
+      </nav>	    		
+    </div>
+</div>
+</header>
 
     <section class="banner-area" id="home">
 

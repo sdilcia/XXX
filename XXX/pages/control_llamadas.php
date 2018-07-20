@@ -100,7 +100,9 @@
 
         <div class="bg-contact2" style="background-image: url('../img/cacao2.jpg');">
             <div class="container-contact2">
-                <div class="wrap-contact2">
+                <div class="wrap-contact2" style="
+    margin-top: 200px;
+">
                          <form class="contact2-form validate-form">
                          <span class="contact2-form-title">
                             Registro de Control de Llamada a Productores
@@ -131,13 +133,19 @@
                                         <div class="descripcion">
                                             <b>Control de llamada:</b>
                                         </div>
-                                        <div class="valor">
-                                            <select class="form-control" name="cboLlamada">
-                                                <option value="-">Seleccione control</option>
-                                                <option value="0">No respondio</option>
-                                                <option value="1">Respondio y no comercializo</option>
-                                                <option value="2">Respondio y comercializo</option>
-                                            </select>
+                                        <br>
+                                        <div class="form-group">
+                                                <div class="radio">
+                                                     <label><input type="radio" id="noRespondio "name="noRespondio" value="1">No respondieron</label>
+                                                </div><br>
+
+                                                <div class="radio">
+                                                     <label><input  type="radio" id="repondioComercializo" name="repondioComercializo"  value="2"  >Respondieron y comercializaron</label>
+                                                </div><br>
+
+                                                <div class="radio">
+                                                     <label><input  type="radio" id="RepondioNoComercializo" name="RepondioNoComercializo"  value="3">Respondieron y no comercializaron</label>
+                                                </div><br>
                                         </div>
                                         <br>
 

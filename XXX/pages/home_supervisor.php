@@ -48,159 +48,111 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 
     <header id="header" id="home">
 
-        <div class="header-top">
-            <div class="header-top-right no-padding">
-                <img src="../img/Logo SAG Horizontal nuevo.png" alt="Logo SAG" class="header-sag">
-                <img src="../img/infoagro textual.png" alt="Logo INFOAGRO" class="header-sag">
-                <img src="../img/LOGO FHIA.jpg" alt="Logo FHIA" class="header-fhia">
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row align-items-center justify-content-between d-flex">
-                <nav id="nav-menu-container">
-                    <ul class="nav-menu">
-                        <li class="menu-active">
-                            <a href="home_supervisor.php">Home</a>
-                        </li>
-                        <li>
-                            <a href="pages/login.php">Nombre de usuario</a>
-                        </li>
-
-                        <li>
-                            <a href="#footerSection">Salir</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <section class="banner-area" id="home">
-
-        <div class="bg-contact2" style="background-image: url('../img/cacao2.jpg');">
-            <div class="container-contact2" style="margin-top: 127px">
-                <!-- Page Container -->
-                <div class="w3-content w3-margin-top" style="max-width:1400px;">
-
-                    <!-- The Grid -->
-                    <div class="w3-row-padding">
-
-                        <!-- Left Column ; margin-left: -170px -->
-                        <div class="w3-third" style="margin-top: 127px">
-
-                            <div class="w3-white w3-text-grey w3-card-4">
-
-                                <div class="w3-container">
-
-                                    <h2>Jane Doe</h2>
-                                    <p>
-                                        <i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Supervisor</p>
-                                    <p>
-                                        <i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Zona</p>
-                                    <p>
-                                        <i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>Correo</p>
-                                    <p>
-                                        <i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>
-                                    <hr>
-
-                                    <button class="accordion">REPORTES</button>
-                                    <div class="panel">
-                                        <li>
-                                            <a href="reporte_zona.php">Reportes por zonas</a>
-                                        </li>
-                                        <li>
-                                            <a href="reporte_semanal.php">Reporte semanal</a>
-                                        </li>
-                                        <li>
-                                            <a href="reporte_mensual.php">Reportes mensual</a>
-                                        </li>
-                                        <li>
-                                            <a href="reporte_llamadas.php">Reportes de llamadas</a>
-                                        </li>
-                                    </div>
-                                </div>
-
-                                <br>
+<div class="header-top">
+      <div class="header-top-right no-padding">
+        <img src="../img/Logo SAG Horizontal nuevo.png" alt="Logo SAG" class="header-sag">
+        <img src="../img/infoagro textual.png" alt="Logo INFOAGRO" class="header-sag"> 
+        <img src="../img/LOGO FHIA.jpg" alt="Logo FHIA" class="header-fhia">
+    </div>
+</div>		
+          
+<div class="container">
+    <div class="row align-items-center justify-content-between d-flex">      
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="../index.php">Home</a></li>
+          <li style="color:white;"><a> Reportes</a>
+            <ul>
+                <li>
+                    <a href="reporte_zona.php">Reportes por zonas</a>
+                </li>
+                <li>
+                    <a href="reporte_semanal.php">Reporte semanal</a>
+                </li>
+                <li>
+                    <a href="reporte_mensual.php">Reportes mensual</a>
+                </li>
+                <li>
+                    <a href="reporte_llamadas.php">Reportes de llamadas</a>
+                </li>
+            </ul>
+          </li>
+          
+          			          
+          <li><a href="#footerSection">Siguenos</a></li>                        
+          
+          <li class="dropdown" >
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user fa-3x"></i>
+            </a>
+    
+            <ul class="dropdown-menu dropdown-user">
+                
+                <li><a href="#"><i class="fa fa-user fa-fw"></i>Perfil Usuario</a>
+                </li>
+                <li><a href="../Manual de Usuario-IlumiArts.pdf" target="_blank"><i class="fa fa-gear fa-fw"></i>Manual de Usuario</a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="../index.php"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                </li>
+            </ul>
+           </li>
 
 
+        </ul>
+      </nav>	    		
+    </div>
+</div>
+</header>
+
+    <section class="banner-area" id="home">	
+                	<div class="bg-contact2 body-zona" style="margin-top: 90px;" >
+                    	<div class="container-contact2">
+                        	<div class="wrap-contact2">
 
 
-                            </div>
-                            <br>
-
-                            <!-- End Left Column -->
+						<div>
+                        <span class="contact2-form-title" style=" padding-bottom:40px;">
+								Reporte Mensual
+							</span> 
+							<div class="container-contact2-form-btn">
+                            <div class="wrap-contact2-form-btn">
+                                <div class="contact2-form-bgbtn"></div>           
+							<a href="../Manual de Usuario-IlumiArts.pdf"> <button type="button" class="btn contact2-form-btn" style="border-color: rgb(6, 26, 6); background: transparent">Visualizar Reporte</button></a>
+							</div>
+							</div>
+							<div class="container-contact2-form-btn">
+                            <div class="wrap-contact2-form-btn">
+                                <div class="contact2-form-bgbtn"></div>
+							<a href="../Manual de Usuario-IlumiArts.pdf" target="_blank"> <button type="button" class="btn contact2-form-btn" style="border-color: rgb(6, 26, 6); background: transparent" >Reporte en PDF</button></a>            
+							</div>
+							</div>
+                        
                         </div>
 
-                        <!-- Right Column style="width: 935px;  -->
-                        <div class="w3-twothird">
-
-                            <div class="w3-container w3-card w3-white w3-margin-bottom" style="margin-top: 127px">
-                                <h2 class="w3-text-grey w3-padding-16">
-                                    <i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>DATOS IMPORTANTES</h2>
-                                <div class="w3-container">
-                                    <h5 class="w3-opacity">
-                                        <b>REPORTES - USUARIOS - ZONAS</b>
-                                    </h5>
-                                    <h6 class="w3-text-teal">
-                                        <i class="fa fa-calendar fa-fw w3-margin-right"></i>2018
-                                        <span class="w3-tag w3-teal w3-round">Lista Actulizada</span>
-                                    </h6>
-                                    <div class="row tile_count">
-                                        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count" style="margin-right: 95px">
-                                            <span class="count_top">
-                                                <i class="fa fa-user"></i> Total Productores</span>
-                                            <div class="count">2500</div>
-                                            <span class="count_bottom">
-                                                <i class="green">4% </i> From last Week</span>
-                                        </div>
-
-                                        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count" style="margin-right: 95px">
-                                            <span class="count_top">
-                                                <i class="fa fa-user"></i> Total Técnicos</span>
-                                            <div class="count">2500</div>
-                                            <span class="count_bottom">
-                                                <i class="green">4% </i> From last Week</span>
-                                        </div>
-
-
-                                        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count" style="margin-right: 95px">
-                                            <span class="count_top">
-                                                <i class="fa fa-user"></i> Total Zonas</span>
-                                            <div class="count">2,315</div>
-                                            <span class="count_bottom">
-                                                <i class="green">
-                                                    <i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
-                                        </div>
-
-                                        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count" style="margin-right: 95px">
-                                            <span class="count_top">
-                                                <i class="fa fa-user"></i> Total Llamadas registradas</span>
-                                            <div class="count">2,315</div>
-                                            <span class="count_bottom">
-                                                <i class="green">
-                                                    <i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
-                                        </div>
-
-                                    </div>
-                                    <hr>
-                                </div>
-
-                            </div>
-
-
-
-                            <!-- End Right Column -->
+                        <span class="contact2-form-title" style=" padding-bottom:40px;">
+								Reporte Mensual
+							</span> 
+							<div class="container-contact2-form-btn">
+                            <div class="wrap-contact2-form-btn">
+                                <div class="contact2-form-bgbtn"></div>           
+							<a href="../Manual de Usuario-IlumiArts.pdf"> <button type="button" class="btn contact2-form-btn" style="border-color: rgb(6, 26, 6); background: transparent">Visualizar Reporte</button></a>
+							</div>
+							</div>
+							<div class="container-contact2-form-btn">
+                            <div class="wrap-contact2-form-btn">
+                                <div class="contact2-form-bgbtn"></div>
+							<a href="../Manual de Usuario-IlumiArts.pdf" target="_blank"> <button type="button" class="btn contact2-form-btn" style="border-color: rgb(6, 26, 6); background: transparent" >Reporte en PDF</button></a>            
+							</div>
+							</div>
+							
+                    	
+						    
+							</div>
                         </div>
-
-                        <!-- End Grid -->
                     </div>
-
-                    <!-- End Page Container -->
                 </div>
-            </div>
-        </div>
-    </section>
+                </section>
 
     <footer class="footer-area section-gap" id="footerSection">
         <div class="col-lg-6 col-md-6 col-sm-6 social-widget ">

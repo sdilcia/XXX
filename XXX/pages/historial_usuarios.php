@@ -28,35 +28,74 @@
 
 <body>
 
-    <header id="header" id="home">
+     <header id="header" id="home">
 
-        <div class="header-top">
-            <div class="header-top-right no-padding">
-                <img src="../img/Logo SAG Horizontal nuevo.png" alt="Logo SAG" class="header-sag">
-                <img src="../img/infoagro textual.png" alt="Logo INFOAGRO" class="header-sag">
-                <img src="../img/LOGO FHIA.jpg" alt="Logo FHIA" class="header-fhia">
-            </div>
-        </div>
+<div class="header-top">
+      <div class="header-top-right no-padding">
+        <img src="../img/Logo SAG Horizontal nuevo.png" alt="Logo SAG" class="header-sag">
+        <img src="../img/infoagro textual.png" alt="Logo INFOAGRO" class="header-sag"> 
+        <img src="../img/LOGO FHIA.jpg" alt="Logo FHIA" class="header-fhia">
+    </div>
+</div>		
+          
+<div class="container">
+    <div class="row align-items-center justify-content-between d-flex">      
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="home_admin.php">Home</a></li>
+          <li style="color:white;"><a> Reportes</a>
+            <ul>
+                <li>
+                    <a href="reporte_zona.php">Reportes por zonas</a>
+                </li>
+                <li>
+                    <a href="reporte_semanal.php">Reporte semanal</a>
+                </li>
+                <li>
+                    <a href="reporte_mensual.php">Reportes mensual</a>
+                </li>
+                <li>
+                    <a href="reporte_llamadas.php">Reportes de llamadas</a>
+                </li>
+            </ul>
+          </li>
+          <li style="color:white;"><a >USUARIOS</a> 
+            <ul>
+                <li><a href="registar_usuario.php">Registrar usuario</a></li>
+                <li><a href="historial_usuarios.php">Planilla de empleados</a></li>
+            </ul>                                  
+          </li>
+          <li style="color:white;"><a>ZONAS</a> 
+            <ul>
+                <li><a href="registar_zona.php">Registrar zona</a> </li>
+                <li><a href="lista_zonas.php">Listado de zonas</a></li>
+            </ul>
+          </li>				          
+          <li><a href="#footerSection">Siguenos</a></li>                        
+          
+          <li class="dropdown" >
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user fa-3x"></i>
+            </a>
+    
+            <ul class="dropdown-menu dropdown-user">
+                
+                <li><a href="#"><i class="fa fa-user fa-fw"></i>Perfil Usuario</a>
+                </li>
+                <li><a href="../Manual de Usuario-IlumiArts.pdf" target="_blank"><i class="fa fa-gear fa-fw"></i>Manual de Usuario</a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="../index.php"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                </li>
+            </ul>
+           </li>
 
-        <div class="container">
-            <div class="row align-items-center justify-content-between d-flex">
-                <nav id="nav-menu-container">
-                    <ul class="nav-menu">
-                        <li class="menu-active">
-                            <a href="home_admin.php">Home</a>
-                        </li>
-                        <li>
-                            <a href="pages/login.php">Nombre de usuario</a>
-                        </li>
 
-                        <li>
-                            <a href="#footerSection">Salir</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+        </ul>
+      </nav>	    		
+    </div>
+</div>
+</header>
 
     <section class="banner-area" id="home">
 
@@ -68,75 +107,14 @@
                     <!-- The Grid -->
                     <div class="w3-row-padding">
 
-                        <!-- Left Column ; margin-left: -170px -->
-                        <div class="w3-third" style="margin-top: 127px">
-
-                            <div class="w3-white w3-text-grey w3-card-4">
-
-                                <div class="w3-container ">
-
-                                    <h2>Jane Doe</h2>
-                                    <p>
-                                        <i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Administrador</p>
-                                    <p>
-                                        <i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Zona</p>
-                                    <p>
-                                        <i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>Correo</p>
-                                    <p>
-                                        <i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>
-                                    <hr>
-
-                                    <button class="accordion">REPORTES</button>
-                                    <div class="panel">
-                                        <li>
-                                            <a href="reporte_zona.php">Reportes por zonas</a>
-                                        </li>
-                                        <li>
-                                            <a href="reporte_semanal.php">Reporte semanal</a>
-                                        </li>
-                                        <li>
-                                            <a href="reporte_mensual.html">Reportes mensual</a>
-                                        </li>
-                                        <li>
-                                            <a href="reporte_llamadas.php">Reportes de llamadas</a>
-                                        </li>
-                                    </div>
-
-                                    <button class="accordion">USUARIOS</button>
-                                    <div class="panel">
-                                        <li>
-                                            <a href="registar_usuario.php">Registrar usuario</a>
-                                        </li>
-                                        <li>
-                                            <a href="historial_usuarios.php">Historial de usuarios</a>
-                                        </li>
-                                    </div>
-                                    <button class="accordion">ZONAS</button>
-                                    <div class="panel">
-                                        <li>
-                                            <a href="registar_zona.php">Registrar zona</a>
-                                        </li>
-                                        <li>
-                                            <a href="lista_zonas.php">Lista de zonas</a>
-                                        </li>
-                                    </div>
-                                </div>
-
-                                <br>
-
-
-
-
-                            </div>
-                            <br>
-
-                            <!-- End Left Column -->
-                        </div>
+                       
 
                         <!-- Right Column  style="width: 935px;"-->
-                        <div class="w3-twothird" style="margin-top: 127px">
+                        <div class="w3-twothird" style="margin-top: 127px; width:1200px; height:674px">
 
-                            <div class="w3-container w3-card w3-white w3-margin-bottom">
+                            <div class="w3-container w3-card w3-white w3-margin-bottom" style="
+    height: 674.3px;
+">
                                 <span class="contact2-form-title" style="margin-top: 30px">
                                     Planilla de empleados
                                 </span>
@@ -145,8 +123,11 @@
                                 <table id="example" class="table table-striped table-bordered" style="width:100%">
                                     <thead>
                                         <tr>
+                                            <th>Código de empleado</th>
                                             <th>Nombre</th>
-                                            <th>Cargo</th>
+                                            <th>Tipo de usuario</th>
+                                            <th>Número de identidad</th>
+                                            <th>Username</th>                                            
                                             <th>Área de trabajo</th>
                                             <th>Edad</th>
                                             <th>Fecha de comienzo</th>
@@ -156,8 +137,11 @@
                                     </thead>
                                     <tbody>
                                         <tr>
+                                            <td></td>
                                             <td>Tiger Nixon</td>
                                             <td>System Architect</td>
+                                            <td></td>
+                                            <td></td>
                                             <td>Edinburgh</td>
                                             <td>61</td>
                                             <td>2011/04/25</td>
@@ -168,81 +152,15 @@
                                             <td>
                                                 <img src="../img/elements/eliminar.png" alt="eliminar" height="42" width="42" ) onclick="eliminarUsuario()"> </td>
                                         </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>63</td>
-                                            <td>2011/07/25</td>
-                                            <td>
-                                                <a href="modificar_usuarios.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/eliminar.png" alt="eliminar" height="42" width="42" ) onclick="eliminarUsuario()"> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ashton Cox</td>
-                                            <td>Junior Technical Author</td>
-                                            <td>San Francisco</td>
-                                            <td>66</td>
-                                            <td>2009/01/12</td>
-                                            <td>
-                                                <a href="modificar_usuarios.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/eliminar.png" alt="eliminar" height="42" width="42" ) onclick="eliminarUsuario()"> </td>
-                                        </tr>
-
-                                        </tr>
-                                        <tr>
-                                            <td>Cedric Kelly</td>
-                                            <td>Senior Javascript Developer</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2012/03/29</td>
-                                            <td>
-                                                <a href="modificar_usuarios.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/eliminar.png" alt="eliminar" height="42" width="42" ) onclick="eliminarUsuario()"> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>33</td>
-                                            <td>2008/11/28</td>
-                                            <td>
-                                                <a href="modificar_usuarios.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/eliminar.png" alt="eliminar" height="42" width="42" ) onclick="eliminarUsuario()"> </td>
-                                        </tr>
-                                        </tr>
-                                        <tr>
-                                            <td>Brielle Williamson</td>
-                                            <td>Integration Specialist</td>
-                                            <td>New York</td>
-                                            <td>61</td>
-                                            <td>2012/12/02</td>
-                                            <td>
-                                                <a href="modificar_usuarios.php">
-                                                    <img src="../img/elements/edit-file.png" alt="modificar" height="42" width="42" )> </a>
-                                            </td>
-                                            <td>
-                                                <img src="../img/elements/eliminar.png" alt="eliminar" height="42" width="42" ) onclick="eliminarUsuario()"> </td>
-                                        </tr>
-                                        </tr>
-
-                                    </tbody>
+                                        
+                                   </tbody>
                                     <tfoot>
                                         <tr>
+                                        <th>Código de empleado</th>
                                             <th>Nombre</th>
-                                            <th>Cargo</th>
+                                            <th>Tipo de usuario</th>
+                                            <th>Número de identidad</th>
+                                            <th>Username</th>                                            
                                             <th>Área de trabajo</th>
                                             <th>Edad</th>
                                             <th>Fecha de comienzo</th>

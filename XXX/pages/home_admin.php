@@ -47,33 +47,72 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 
     <header id="header" id="home">
 
-        <div class="header-top">
-            <div class="header-top-right no-padding">
-                <img src="../img/Logo SAG Horizontal nuevo.png" alt="Logo SAG" class="header-sag">
-                <img src="../img/infoagro textual.png" alt="Logo INFOAGRO" class="header-sag">
-                <img src="../img/LOGO FHIA.jpg" alt="Logo FHIA" class="header-fhia">
-            </div>
-        </div>
+<div class="header-top">
+      <div class="header-top-right no-padding">
+        <img src="../img/Logo SAG Horizontal nuevo.png" alt="Logo SAG" class="header-sag">
+        <img src="../img/infoagro textual.png" alt="Logo INFOAGRO" class="header-sag"> 
+        <img src="../img/LOGO FHIA.jpg" alt="Logo FHIA" class="header-fhia">
+    </div>
+</div>		
+          
+<div class="container">
+    <div class="row align-items-center justify-content-between d-flex">      
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="home_admin.php">Home</a></li>
+          <li style="color:white;"><a> Reportes</a>
+            <ul>
+                <li>
+                    <a href="reporte_zona.php">Reportes por zonas</a>
+                </li>
+                <li>
+                    <a href="reporte_semanal.php">Reporte semanal</a>
+                </li>
+                <li>
+                    <a href="reporte_mensual.php">Reportes mensual</a>
+                </li>
+                <li>
+                    <a href="reporte_llamadas.php">Reportes de llamadas</a>
+                </li>
+            </ul>
+          </li>
+          <li style="color:white;"><a >USUARIOS</a> 
+            <ul>
+                <li><a href="registar_usuario.php">Registrar usuario</a></li>
+                <li><a href="historial_usuarios.php">Planilla de empleados</a></li>
+            </ul>                                  
+          </li>
+          <li style="color:white;"><a>ZONAS</a> 
+            <ul>
+                <li><a href="registar_zona.php">Registrar zona</a> </li>
+                <li><a href="lista_zonas.php">Listado de zonas</a></li>
+            </ul>
+          </li>				          
+          <li><a href="#footerSection">Siguenos</a></li>                        
+          
+          <li class="dropdown" >
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user fa-3x"></i>
+            </a>
+    
+            <ul class="dropdown-menu dropdown-user">
+                
+                <li><a href="#"><i class="fa fa-user fa-fw"></i>Perfil Usuario</a>
+                </li>
+                <li><a href="../Manual de Usuario-IlumiArts.pdf" target="_blank"><i class="fa fa-gear fa-fw"></i>Manual de Usuario</a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="../index.php"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                </li>
+            </ul>
+           </li>
 
-        <div class="container">
-            <div class="row align-items-center justify-content-between d-flex">
-                <nav id="nav-menu-container">
-                    <ul class="nav-menu">
-                        <li class="menu-active">
-                            <a href="home_admin.php">Home</a>
-                        </li>
-                        <li>
-                            <a href="home_admin.php">Nombre de usuario</a>
-                        </li>
 
-                        <li>
-                            <a href="#footerSection">Salir</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+        </ul>
+      </nav>	    		
+    </div>
+</div>
+</header>
 
     <section class="banner-area" id="home">
 
@@ -85,123 +124,21 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
                     <!-- The Grid -->
                     <div class="w3-row-padding">
 
-                        <!-- Left Column ; margin-left: -170px -->
-                        <div class="w3-third" style="margin-top: 127px">
-
-                            <div class="w3-white w3-text-grey w3-card-4">
-
-                                <div class="w3-container ">
-
-                                    <h2>Jane Doe</h2>
-                                    <p>
-                                        <i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Administrador</p>
-                                    <p>
-                                        <i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Zona</p>
-                                    <p>
-                                        <i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>Correo</p>
-                                    <p>
-                                        <i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>
-                                    <hr>
-
-                                    <button class="accordion">REPORTES</button>
-                                    <div class="panel">
-                                        <li>
-                                            <a href="reporte_zona.php">Reportes por zonas</a>
-                                        </li>
-                                        <li>
-                                            <a href="reporte_semanal.php">Reporte semanal</a>
-                                        </li>
-                                        <li>
-                                            <a href="reporte_mensual.php">Reportes mensual</a>
-                                        </li>
-                                        <li>
-                                            <a href="reporte_llamadas.php">Reportes de llamadas</a>
-                                        </li>
-                                    </div>
-
-                                    <button class="accordion">USUARIOS</button>
-                                    <div class="panel">
-                                        <li>
-                                            <a href="registar_usuario.php">Registrar usuario</a>
-                                        </li>
-                                        <li>
-                                            <a href="historial_usuarios.php">Planilla de empleados</a>
-                                        </li>
-                                    </div>
-                                    <button class="accordion">ZONAS</button>
-                                    <div class="panel">
-                                        <li>
-                                            <a href="registar_zona.php">Registrar zona</a>
-                                        </li>
-
-                                        <li>
-                                                <a href="lista_zonas.php">Lista de zonas</a>
-                                            </li>
-
-                                    </div>
-                                </div>
-
-                                <br>
-
-
-
-
-                            </div>
-                            <br>
-
-                            <!-- End Left Column -->
-                        </div>
+                       
 
                         <!-- Right Column  style="width: 935px;"-->
                         <div class="w3-twothird" style="margin-top: 127px">
 
-                            <div class="w3-container w3-card w3-white w3-margin-bottom">
+                            <div class="w3-container w3-card w3-white w3-margin-bottom" style="width:1100px;">
                                 <h2 class="w3-text-grey w3-padding-16">
-                                    <i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>DATOS IMPORTANTES</h2>
+                                    <i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>BIENVENIDO</h2>
                                 <div class="w3-container">
                                     <h5 class="w3-opacity">
                                         <b>REPORTES - USUARIOS - ZONAS</b>
                                     </h5>
-                                    <h6 class="w3-text-teal">
-                                        <i class="fa fa-calendar fa-fw w3-margin-right"></i>2018
-                                        <span class="w3-tag w3-teal w3-round">Lista Actulizada</span>
-                                    </h6>
+                                    
                                     <div class="row tile_count">
-                                        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count" style="margin-right: 95px">
-                                            <span class="count_top">
-                                                <i class="fa fa-user"></i> Total Productores</span>
-                                            <div class="count">2500</div>
-                                            <span class="count_bottom">
-                                                <i class="green">4% </i> From last Week</span>
-                                        </div>
-
-                                        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count" style="margin-right: 95px">
-                                            <span class="count_top">
-                                                <i class="fa fa-user"></i> Total Técnicos</span>
-                                            <div class="count">2500</div>
-                                            <span class="count_bottom">
-                                                <i class="green">4% </i> From last Week</span>
-                                        </div>
-
-
-                                        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count" style="margin-right: 95px">
-                                            <span class="count_top">
-                                                <i class="fa fa-user"></i> Total Zonas</span>
-                                            <div class="count">2,315</div>
-                                            <span class="count_bottom">
-                                                <i class="green">
-                                                    <i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
-                                        </div>
-
-                                        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count" style="margin-right: 95px">
-                                            <span class="count_top">
-                                                <i class="fa fa-user"></i> Total Llamadas registradas</span>
-                                            <div class="count">2,315</div>
-                                            <span class="count_bottom">
-                                                <i class="green">
-                                                    <i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
-                                        </div>
-
+                                        
                                     </div>
                                     <hr>
                                 </div>
