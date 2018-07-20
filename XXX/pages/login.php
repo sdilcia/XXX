@@ -1,10 +1,28 @@
 <?php
+
+session_start();
+ 
+// Si la variable sesión existe redirige al home correspondiente
+if(isset($_SESSION['username']) || !empty($_SESSION['username'])){
+    if($_SESSION['tipo_usuario'] == 1){
+        header("location: home_admin.php");
+        exit;
+    }else if($_SESSION['tipo_usuario'] == 2){
+        header("location: home_supervisor.php");
+        exit;
+    }else if($_SESSION['tipo_usuario'] == 3){
+        header("location: home_tecnico.php");
+        exit;
+    }
+}
+
 // Include config file
 require_once 'db.php';
  
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = "";
+
 
 
  
@@ -28,7 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT username, contrasenia, codigo_tipo_usuario FROM tbl_usuario WHERE username = ?";
+        $sql = "SELECT codigo_usuario, username, contrasenia, codigo_tipo_usuario FROM tbl_usuario WHERE username = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -45,12 +63,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // Check if username exists, if yes then verify password
                 if(mysqli_stmt_num_rows($stmt) == 1){                    
                     // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $username, $hashed_password, $tipo_usuario);
+                    mysqli_stmt_bind_result($stmt, $codigo_usuario, $username, $hashed_password, $tipo_usuario);
                     if(mysqli_stmt_fetch($stmt)){
                         if(password_verify($password, $hashed_password)){
                             /* Password is correct, so start a new session and
                             save the username to the session */
                             session_start();
+                            $_SESSION['codigo_usuario'] = $codigo_usuario;
                             $_SESSION['username'] = $username;
                             $_SESSION['tipo_usuario'] = $tipo_usuario;
                             if($tipo_usuario == 1){

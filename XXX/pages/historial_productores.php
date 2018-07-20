@@ -1,8 +1,8 @@
 <?php
-// Initialize the session
+// Inicializar la sesión
 session_start();
  
-// If session variable is not set it will redirect to login page
+// Si la variable sesión no está definida manda al login
 if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
     header("location: login.php");
     exit;

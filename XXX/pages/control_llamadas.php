@@ -1,3 +1,70 @@
+<?php
+// Initialize the session
+session_start();
+ 
+// If session variable is not set it will redirect to login page
+if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
+    header("location: login.php");
+    exit;
+}
+
+if(empty(trim($_GET['id_productor']))){
+    header("location: historial_productores.php");
+    exit;
+} 
+
+require_once 'db.php';
+
+$error_validacion = "";
+$llamadas = $contro_llamada = $observaciones = $codigo_productor = "";
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+ 
+    // Valida campos vacíos 
+    if(empty(trim($_POST["txtNumeroLlamadas"]))){
+        $error_validacion = 'Por favor ingrese el número de llamadas.';
+    } else{
+        $llamadas = trim($_POST["txtNumeroLlamadas"]);
+    }
+    
+    if(empty(trim($_POST['estadollamada']))){
+        $error_validacion = 'Seleccione una opción de control de llamada.';
+    } else{
+        $contro_llamada = trim($_POST['estadollamada']);
+    }
+
+    if(empty(trim($_GET['id_productor']))){
+        header("location: historial_productores.php");
+        exit;
+    } else{
+        $codigo_productor = trim($_GET["id_productor"]);
+    }
+    
+
+    
+    // Valida los campos
+    if(empty($error_validacion)){
+        $observaciones = trim($_POST["txtobservacion"]);
+        $username = $_SESSION["username"];
+        $codigo_usuario = $_SESSION["codigo_usuario"];
+
+        $sql = "INSERT INTO tbl_llamadas(fecha_llamada, numero_llamadas, observacion, codigo_productor, codigo_control_llamada, codigo_usuario)
+        VALUES((SELECT NOW()),'$llamadas','$observaciones','$codigo_productor','$contro_llamada', '$codigo_usuario')";
+         
+        if(mysqli_query($link, $sql)){
+            header("location: home_admin.php");
+        }else{
+            $error_validacion = mysqli_error($link);
+        }
+        
+    }
+    
+    // Cerrar conexión
+    mysqli_close($link);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -50,7 +117,7 @@
                         </li>
 
                         <li>
-                            <a href="#footerSection">Salir</a>
+                            <a href="logout.php">Salir</a>
                         </li>
                     </ul>
                 </nav>
@@ -141,20 +208,8 @@
                                     Registro de Control de Llamada a Productores
                                 </span>
                                 <div class="w3-container">
-                                    <form class="contact2-form validate-form">
-                                        <div class="descripcion">
-                                            <b>Productor:</b>
-                                        </div>
-                                        <div class="valor">
-                                            <select class="form-control" name="cboProductor">
-                                                <option value="-">Seleccione productor</option>
-                                                <option value="0">Productor 1</option>
-                                                <option value="1">Productor 2</option>
-                                                <option value="2">Productor 3</option>
-                                            </select>
-                                        </div>
-                                        <br>
-
+                                    <form class="contact2-form validate-form" method="POST">
+                                         
                                         <div class="descripcion">
                                             <b>Numero de llamadas realizadas</b>
                                         </div>
@@ -166,31 +221,41 @@
                                         <div class="descripcion">
                                             <b>Control de llamada:</b>
                                         </div>
-                                        <div class="valor">
-                                            <select class="form-control" name="cboLlamada">
-                                                <option value="-">Seleccione control</option>
-                                                <option value="0">No respondio</option>
-                                                <option value="1">Respondio y no comercializo</option>
-                                                <option value="2">Respondio y comercializo</option>
-                                            </select>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="radio1" value="1" name="estadollamada">
+                                            <label class="form-check-label" for="radio1">No respondió</label>
                                         </div>
+                                        
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="radio2" value="2" name="estadollamada">
+                                            <label class="form-check-label" for="radio2">Respondió y comercializó</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="radio3" value="3" name="estadollamada">
+                                            <label class="form-check-label" for="radio3">Respondió y no comercializó</label>
+                                        </div>
+                                        
+                                        <br>
                                         <br>
 
                                         <div class="descripcion">
                                             <b>Observaciones:</b>
                                         </div>
                                         <div class="form-group">
-                                            <textarea class="form-control" rows="5" id="observacion"></textarea>
+                                            <textarea class="form-control" rows="5" id="observacion" name="txtobservacion"></textarea>
                                         </div>
 
 
                                         <div class="container-contact2-form-btn">
                                             <div class="wrap-contact2-form-btn">
                                                 <div class="contact2-form-bgbtn"></div>
-                                                <button class="contact2-form-btn" style="border-color: rgb(6, 26, 6)">
-                                                    Registrar
-                                                </button>
+                                                <input type="submit" value="Registrar llamada" class="btn contact2-form-btn" style="border-color: rgb(6, 26, 6); background: transparent">
+
                                             </div>
+                                        </div>
+
+                                        <div class="<?php echo (!empty($error_validacion)) ? 'has-error' : ''; ?>" style="color:red">               
+                                            <br><span class="help-block"><?php echo $error_validacion; ?></span>
                                         </div>
                                     </form>
                                     <hr>
