@@ -194,7 +194,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         <div class="container-contact2-form-btn">
                             <div class="wrap-contact2-form-btn">
                                 <div class="contact2-form-bgbtn"></div>
-                                <input type="submit" value="Iniciar Sesión" onclick="validar();" class="btn contact2-form-btn" style="border-color: rgb(6, 26, 6); background: transparent">
+                                <input type="submit" value="Iniciar Sesión" onclick="return validar()" class="btn contact2-form-btn" style="border-color: rgb(6, 26, 6); background: transparent">
                             </div>
                         </div>
                         <div class="<?php echo (!empty($username_err)) ? 'has-error' : ''; ?>" style="color:red">               
