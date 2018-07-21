@@ -175,19 +175,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         </span>
 
                         <div class="wrap-input2 validate-input" data-validate="Requiere el Usuario: ex@abc.xyz">
-                            <input class="input2" type="text" name="user">
+                            <input class="input2" type="text" name="user" id="username">
                             <span class="focus-input2" data-placeholder="Usuario"></span>
                         </div>
 
                         <div class="wrap-input2 validate-input" data-validate="Requiere de una contraseña">
-                            <input class="input2" type="password" name="contrasenia">
+                            <input class="input2" type="password" name="contrasenia" id="contrasenia">
                             <span class="focus-input2" data-placeholder="Contraseña"></span>
                         </div>
 
                         <div class="container-contact2-form-btn">
                             <div class="wrap-contact2-form-btn">
                                 <div class="contact2-form-bgbtn"></div>
-                                <input type="submit" value="Iniciar Sesión" class="btn contact2-form-btn" style="border-color: rgb(6, 26, 6); background: transparent">
+                                <input type="submit" value="Iniciar Sesión" onclick="validar();" class="btn contact2-form-btn" style="border-color: rgb(6, 26, 6); background: transparent">
                             </div>
                         </div>
                         <div class="<?php echo (!empty($username_err)) ? 'has-error' : ''; ?>" style="color:red">               
@@ -237,6 +237,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <script src="../js/mainlogin.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/select2.min.js"></script>
+    <script src="../js/validaciones.js"></script>
 
 
 </body>
