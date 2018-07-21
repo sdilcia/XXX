@@ -93,7 +93,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
                 <li><a href="../Manual de Usuario-IlumiArts.pdf" target="_blank"><i class="fa fa-gear fa-fw"></i>Manual de Usuario</a>
                 </li>
                 <li class="divider"></li>
-                <li><a href="../index.php"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
                 </li>
             </ul>
            </li>
@@ -128,25 +128,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 							</div>
 							</div>
                         
-                        </div>
-
-                        <span class="contact2-form-title" style=" padding-bottom:40px;">
-								Reporte Mensual
-							</span> 
-							<div class="container-contact2-form-btn">
-                            <div class="wrap-contact2-form-btn">
-                                <div class="contact2-form-bgbtn"></div>           
-							<a href="../Manual de Usuario-IlumiArts.pdf"> <button type="button" class="btn contact2-form-btn" style="border-color: rgb(6, 26, 6); background: transparent">Visualizar Reporte</button></a>
-							</div>
-							</div>
-							<div class="container-contact2-form-btn">
-                            <div class="wrap-contact2-form-btn">
-                                <div class="contact2-form-bgbtn"></div>
-							<a href="../Manual de Usuario-IlumiArts.pdf" target="_blank"> <button type="button" class="btn contact2-form-btn" style="border-color: rgb(6, 26, 6); background: transparent" >Reporte en PDF</button></a>            
-							</div>
-							</div>
-							
-                    	
+                        </div>                  	
 						    
 							</div>
                         </div>

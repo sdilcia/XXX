@@ -82,7 +82,7 @@
                                 <li><a href="../Manual de Usuario-IlumiArts.pdf" target="_blank"><i class="fa fa-gear fa-fw"></i>Manual de Usuario</a>
                                 </li>
                                 <li class="divider"></li>
-                                <li><a href="../index.php"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                                <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
                                 </li>
                             </ul>
                            </li>

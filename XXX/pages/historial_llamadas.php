@@ -66,7 +66,7 @@ require_once 'db.php';
 			    	<div class="row align-items-center justify-content-between d-flex">      
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
-                          <li class="menu-active"><a href="../index.php">Home</a></li>
+                          <li class="menu-active"><a href="home_tecnico.php">Home</a></li>
                           <li style="color:white;"><a> Reportes</a>
                             <ul>
                                 <li>
@@ -108,7 +108,7 @@ require_once 'db.php';
                                 <li><a href="../Manual de Usuario-IlumiArts.pdf" target="_blank"><i class="fa fa-gear fa-fw"></i>Manual de Usuario</a>
                                 </li>
                                 <li class="divider"></li>
-                                <li><a href="../index.php"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                                <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
                                 </li>
                             </ul>
                            </li>
@@ -124,7 +124,7 @@ require_once 'db.php';
 
         <div class="bg-contact2" style="background-image: url('../img/cacao2.jpg');">
             <div class="container-contact2">
-               <div class="wrap-contact2" style="width: 1210px;margin-left: 90px;margin-right: 90px;margin-bottom: 90px;height: 862px;">
+               <div class="wrap-contact2" style="width: 1210px;margin-left: 90px;margin-right: 90px;margin-bottom: 90px;height: 1012px;">
                <span class="contact2-form-title">
                                     Historial de Control de Llamada a Productores
                                 </span>
@@ -208,7 +208,9 @@ require_once 'db.php';
     <script src="../js/jquery.magnific-popup.min.js"></script>
     <script src="../js/owl.carousel.min.js"></script>
     <script src="../js/jquery.sticky.js"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/jquery.nice-select.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
     <script src="../js/parallax.min.js"></script>
     <script src="../js/waypoints.min.js"></script>
     <script src="../js/jquery.counterup.min.js"></script>
@@ -218,20 +220,13 @@ require_once 'db.php';
     <script src="../js/popper.min.js"></script>
     <script src="../js/select2.min.js"></script>
     <script>
-        var acc = document.getElementsByClassName("accordion");
-        var i;
-
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                }
-            });
-        }
+        $(document).ready(function() {
+    $('#example').DataTable( {
+        "scrollY":        "1000px",
+        "scrollCollapse": true,
+        "paging":         false
+    } );
+} );
     </script>
 
     <script type="text/javascript">
