@@ -199,22 +199,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
     <script src="../js/mainlogin.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/select2.min.js"></script>
-    <script>
-        var acc = document.getElementsByClassName("accordion");
-        var i;
-
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                }
-            });
-        }
-    </script>
+    
 
 
 </body>

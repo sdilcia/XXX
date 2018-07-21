@@ -30,33 +30,72 @@
 
     <header id="header" id="home">
 
-        <div class="header-top">
-            <div class="header-top-right no-padding">
-                <img src="../img/Logo SAG Horizontal nuevo.png" alt="Logo SAG" class="header-sag">
-                <img src="../img/infoagro textual.png" alt="Logo INFOAGRO" class="header-sag">
-                <img src="../img/LOGO FHIA.jpg" alt="Logo FHIA" class="header-fhia">
-            </div>
-        </div>
+<div class="header-top">
+      <div class="header-top-right no-padding">
+        <img src="../img/Logo SAG Horizontal nuevo.png" alt="Logo SAG" class="header-sag">
+        <img src="../img/infoagro textual.png" alt="Logo INFOAGRO" class="header-sag"> 
+        <img src="../img/LOGO FHIA.jpg" alt="Logo FHIA" class="header-fhia">
+    </div>
+</div>		
+          
+<div class="container">
+    <div class="row align-items-center justify-content-between d-flex">      
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="../index.php">Home</a></li>
+          <li style="color:white;"><a> Reportes</a>
+            <ul>
+                <li>
+                    <a href="reporte_zona.php">Reportes por zonas</a>
+                </li>
+                <li>
+                    <a href="reporte_semanal.php">Reporte semanal</a>
+                </li>
+                <li>
+                    <a href="reporte_mensual.php">Reportes mensual</a>
+                </li>
+                <li>
+                    <a href="reporte_llamadas.php">Reportes de llamadas</a>
+                </li>
+            </ul>
+          </li>
+          <li style="color:white;"><a >CONTROL DE LLAMADAS</a> 
+            <ul>
+                <li><a href="control_llamadas.php">Registro de llamadas</a></li>
+                <li><a href="historial_llamadas.php">Historial llamadas</a></li>
+            </ul>                                  
+          </li>
+          <li style="color:white;"><a>PRODUCTORES</a> 
+            <ul>
+                <li><a href="registrar_productor.php">Registrar productor</a> </li>
+                <li><a href="historial_productores.php">Listado de productores</a></li>
+            </ul>
+          </li>				          
+          <li><a href="#footerSection">Siguenos</a></li>                        
+          
+          <li class="dropdown" >
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user fa-3x"></i>
+            </a>
+    
+            <ul class="dropdown-menu dropdown-user">
+                
+                <li><a href="#"><i class="fa fa-user fa-fw"></i>Perfil Usuario</a>
+                </li>
+                <li><a href="../Manual de Usuario-IlumiArts.pdf" target="_blank"><i class="fa fa-gear fa-fw"></i>Manual de Usuario</a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                </li>
+            </ul>
+           </li>
 
-        <div class="container">
-            <div class="row align-items-center justify-content-between d-flex">
-                <nav id="nav-menu-container">
-                    <ul class="nav-menu">
-                        <li class="menu-active">
-                            <a href="home_tecnico.php">Home</a>
-                        </li>
-                        <li>
-                            <a href="home_tecnico.php">Nombre de usuario</a>
-                        </li>
 
-                        <li>
-                            <a href="#footerSection">Salir</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+        </ul>
+      </nav>	    		
+    </div>
+</div>
+</header>
 
     <section class="banner-area" id="home">
 
@@ -67,71 +106,6 @@
 
                     <!-- The Grid -->
                     <div class="w3-row-padding">
-
-                        <!-- Left Column ; margin-left: -170px -->
-                        <div class="w3-third" style="margin-top: 127px">
-
-                            <div class="w3-white w3-text-grey w3-card-4">
-
-                                <div class="w3-container ">
-
-                                    <h2>Jane Doe</h2>
-                                    <p>
-                                        <i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Tècnico</p>
-                                    <p>
-                                        <i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Zona</p>
-                                    <p>
-                                        <i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>Correo</p>
-                                    <p>
-                                        <i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>
-                                    <hr>
-
-                                    <button class="accordion">REPORTES</button>
-                                    <div class="panel">
-                                        <li>
-                                            <a href="reporte_zona.php">Reportes por zonas</a>
-                                        </li>
-                                        <li>
-                                            <a href="reporte_semanal.php">Reporte semanal</a>
-                                        </li>
-                                        <li>
-                                            <a href="reporte_mensual.php">Reportes mensual</a>
-                                        </li>
-                                        <li>
-                                            <a href="reporte_llamadas.php">Reportes de llamadas</a>
-                                        </li>
-                                    </div>
-
-                                    <button class="accordion">CONTROL DE LLAMADAS</button>
-                                    <div class="panel">
-                                        <li>
-                                            <a href="control_llamadas.php">Registro de llamadas</a>
-                                        </li>
-                                        <li>
-                                            <a href="historial_llamadas.php">Historial llamadas</a>
-                                        </li>
-                                    </div>
-                                    <button class="accordion">PRODUCTORES</button>
-                                    <div class="panel">
-                                        <li>
-                                            <a href="registrar_productor.php">Registrar productor</a>
-                                        </li>
-                                        <p>Modificar productor</p>
-                                        <p>Dar de baja al productor</p>
-                                    </div>
-                                </div>
-
-                                <br>
-
-
-
-
-                            </div>
-                            <br>
-
-                            <!-- End Left Column -->
-                        </div>
-
                         <!-- Right Column  style="width: 935px;"-->
                         <div class="w3-twothird" style="margin-top: 127px">
 
@@ -250,24 +224,6 @@
     <script src="../js/mainlogin.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/select2.min.js"></script>
-    <script>
-        var acc = document.getElementsByClassName("accordion");
-        var i;
-
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                }
-            });
-        }
-    </script>
-
-
 </body>
 
 </html>

@@ -1,3 +1,17 @@
+<?php
+// Inicializar la sesión
+session_start();
+ 
+// Si la variable sesión no está definida manda al login
+if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
+    header("location: login.php");
+    exit;
+}
+
+require_once 'db.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -23,6 +37,16 @@
     <link rel="stylesheet" href="../css/util.css">
 
     <link rel="stylesheet" href="../css/home_page_users.css">
+
+    <!--Para crear la tabla paginada-->
+    <link rel="stylesheet" href="../css/jquery.dataTables.min.css">
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready( function () {
+            $('#example').DataTable();
+        } );
+    </script>
 
 </head>
 
@@ -105,54 +129,43 @@
                                     Historial de Control de Llamada a Productores
                                 </span>
 
-                                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar por nombre..">
-                                <table id="example" class="table table-striped table-bordered" style="width:100%">
+                                <!--<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar por nombre..">-->
+                                <table data-order='[[ 1, "desc" ]]' data-page-length='10' id="example" class="table table-striped table-bordered display" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>Fecha</th>
+                                            <th>Codigo Productor</th>
+                                            <th>Fecha de llamada</th>
                                             <th>Número de llamadas</th>
+                                            <th>Resultado llamada</th>
                                             <th>Observaciones</th>
-                                            <th>Productor</th>
-                                            <th>Código de llamada</th>
-                                            <th>Técnico</th>
-                                            <th>Nuevo</th>
-                                            <th>Modificar</th>
-                                            <th>Eliminar</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-            <?php
-           include("db.php");
-            $query="SELECT * FROM tbl_llamadas";
-            $resultado=$conexion->query($query);
-            while($row=$resultado->fetch_assoc()){
-                ?>
-               <tr>
-                   <td><?php echo $row['fecha_llamada']?></td>
-                   <td><?php echo $row['numero_llamadas']?></td>
-                   <td><?php echo $row['observacion']?></td>
-                   <td><?php echo $row['codigo_productor']?></td>
-                   <td><?php echo $row['codigo_control_llamada']?></td>
-                   <td><?php echo $row['codigo_usuario']?></td>
-                   <td><a href="registro_llamadas.php"><img src="../img/elements/agregar.jpg" alt="agregar" height="42" width="42" )></a></td>
-                   <td><a href="modificar_llamada.php?id_llamada=<?php echo $row['codigo_llamada'];?>"><img src="../img/elements/edit-file.png.jpg" alt="modificar" height="42" width="42" )></a></td>
-                   <td><a href="eliminar_llamada.php?id_llamada=<?php echo $row['codigo_llamada'];?>"><img src="../img/elements/eliminar.jpg" alt="eliminar" height="42" width="42" )></a></td>
-            </tr>
-                <?php  }  ?>
-        
-           
-        </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Productor</th>
-                                            <th>Control</th>
-                                            <th>Observaciones</th>
-                                            <th>Numero de llamadas</th>
-                                            <th>Fecha</th>
-                                            <th>Tecnico</th>
-                                            <th></th>
-                                        </tr>
-                                    </tfoot>
+                                        <?php
+                                            $query="SELECT b.codigo_productor, a.fecha_llamada, a.numero_llamadas, c.nombre_control_llamada, a.observacion 
+                                            FROM `tbl_llamadas` a 
+                                            INNER JOIN tbl_productor b on (a.codigo_productor = b.codigo_productor) 
+                                            INNER JOIN tbl_control_llamada c on (a.codigo_control_llamada = c.codigo_control_llamada)";
+                                            if ($_SESSION["tipo_usuario"] == 3){
+                                                $query .= "WHERE A.CODIGO_USUARIO = 3
+                                                ORDER BY a.fecha_llamada desc";
+                                            } else {
+                                                $query .= "ORDER BY a.fecha_llamada desc";
+                                            }
+                                            $resultado=$link->query($query);
+                                            while($row=$resultado->fetch_assoc()){
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $row['codigo_productor']?></td>
+                                                <td><?php echo $row['fecha_llamada']?></td>
+                                                <td><?php echo $row['numero_llamadas']?></td>
+                                                <td><?php echo $row['nombre_control_llamada']?></td>
+                                                <td><?php echo $row['observacion']?></td>
+                                            </tr>
+                                            <?php  
+                                            }
+                                        ?>
+                                    </tbody>
                                 </table>
 
                </div>
@@ -187,7 +200,6 @@
         </div>
     </footer>
 
-    <script src="../js/vendor/jquery-2.2.4.min.js"></script>
     <script src="../js/vendor/bootstrap.min.js"></script>
     <script src="../js/easing.min.js"></script>
     <script src="../js/hoverIntent.js"></script>
