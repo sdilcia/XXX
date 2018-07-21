@@ -46,7 +46,6 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 			<link rel="stylesheet" href="../css/main.css">
 			<link rel="stylesheet" href="../css/util.css">
             <link rel="stylesheet" href="../css/mainlogin.css">
-            <link rel="stylesheet" href="../css/main-landing.css">
 
             
 		</head>
