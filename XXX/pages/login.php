@@ -1,7 +1,14 @@
 <?php
 
 session_start();
- 
+
+//Si la sesión lleva inactiva media hora se destruye.
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+    session_unset();    
+    session_destroy(); 
+}
+$_SESSION['LAST_ACTIVITY'] = time(); //Se actualiza el tiempo de la última actividad
+
 // Si la variable sesión existe redirige al home correspondiente
 if(isset($_SESSION['username']) || !empty($_SESSION['username'])){
     if($_SESSION['tipo_usuario'] == 1){

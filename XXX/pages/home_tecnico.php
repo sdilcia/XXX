@@ -1,7 +1,15 @@
 <?php
-// Initialize the session
+// Inicializar la sesión
 session_start();
  
+//Si la sesión lleva inactiva media hora se destruye.
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+    session_unset();    
+    session_destroy(); 
+    header("location: login.php");
+}
+$_SESSION['LAST_ACTIVITY'] = time(); //Se actualiza el tiempo de la última actividad
+
 // If session variable is not set it will redirect to login page
 if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
     header("location: login.php");
