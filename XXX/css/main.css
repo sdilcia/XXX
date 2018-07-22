@@ -2901,7 +2901,6 @@ body.mobile-nav-active #mobile-nav-toggle {
     transition: max-height 0.2s ease-out;
 }
 
-
 *{
   box-sizing: border-box;
 }
@@ -2944,15 +2943,57 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin: 0 auto; 
 } 
 
-.body-tecnico{
+.banner-area2{
     background-image: url(../img/productor.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
+    
 }
-.body-zona{
+
+.banner-area1{
   background-image: url(../img/cacao1.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.banner-area3{
+  background-image: url(../img/cacao3.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.banner-area4{
+  background-image: url(../img/chocolate0.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.banner-area5{
+  background-image: url(../img/el-cacao-es-un-superalimento.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.banner-area6{
+  background-image: url(../img/Cocoa-beans.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.banner-area7{
+  background-image: url(../img/istock.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -2963,3 +3004,16 @@ body.mobile-nav-active #mobile-nav-toggle {
   background-color: rgb(29, 134, 38);
   border-color: #234023;
 }
+
+.fondo_tabla{
+    margin-top: 230px;
+    margin-bottom: 100px;
+    background-color: white;
+    padding: 20px;
+}
+
+[type="search"]{
+  background-color:rgba(49, 199, 61, 0.411);
+  height: 45px;
+  padding: 20px;
+  }

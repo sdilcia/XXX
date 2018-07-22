@@ -46,9 +46,6 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/mainlogin.css">
     <link rel="stylesheet" href="../css/util.css">
-
-    <link rel="stylesheet" href="../css/home_page_users.css">
-
 </head>
 
 <body>
@@ -114,85 +111,39 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
                 </li>
             </ul>
            </li>
-
-
         </ul>
       </nav>	    		
     </div>
 </div>
 </header>
 
-    <section class="banner-area" id="home">
-
-        <div class="bg-contact2" style="background-image: url('../img/cacao2.jpg');">
-            <div class="container-contact2" style="margin-top: 127px">
-                <!-- Page Container -->
-                <div class="w3-content w3-margin-top" style="max-width:1400px;">
-
-                    <!-- The Grid -->
+   <section class="banner-area5" id="home">	
+                <div class="bg-contact2">
+                    <div class="container-contact2">
+                        <div class=" home-contact2">
                     <div class="w3-row-padding">
-
-                       
-
-                        <!-- Right Column  style="width: 935px;"-->
-                        <div class="w3-twothird" style="margin-top: 127px">
-
                             <div class="w3-container w3-card w3-white w3-margin-bottom" style="width:1100px;">
                                 <h2 class="w3-text-grey w3-padding-16">
                                     <i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>BIENVENIDO</h2>
                                 <div class="w3-container">
                                     <h5 class="w3-opacity">
                                         <b>REPORTES - USUARIOS - ZONAS</b>
-                                    </h5>
-                                    
+                                    </h5>                                    
                                     <div class="row tile_count">
                                         
                                     </div>
                                     <hr>
                                 </div>
-
                             </div>
-
-
-
-                            <!-- End Right Column -->
-                        </div>
-
-                        <!-- End Grid -->
-                    </div>
-
-                    <!-- End Page Container -->
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer-area section-gap" id="footerSection">
-        <div class="col-lg-6 col-md-6 col-sm-6 social-widget ">
-            <div class="single-footer-widget footer-redes">
-                <h6>Siguenos</h6>
-                <div class="footer-redes">
-                    <a href="https://www.facebook.com/saghn" target="_blank">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href="https://www.twitter.com/saghonduras" target="_blank">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="col-lg-6 col-md-6 col-sm-6">
-            <div class="single-footer-widget"></div>
-            <p class="footer-text">
-                Copyright &copy;
-                <script>document.write(new Date().getFullYear());</script> All rights reserved
-                <br> Estudiantes UNAH
-                <br> INGENIERIA DEL SOFTWARE</a>
-            </p>
-        </div>
-        </div>
-    </footer>
+                <?php
+					include("footer.php");
+					echo "footer.php";
+				?>	
 
     <script src="../js/vendor/jquery-2.2.4.min.js"></script>
     <script src="../js/vendor/bootstrap.min.js"></script>

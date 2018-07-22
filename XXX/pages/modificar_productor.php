@@ -191,32 +191,10 @@
             </div>
     </section>
 
-    <footer class="footer-area section-gap" id="footerSection">
-        <div class="col-lg-6 col-md-6 col-sm-6 social-widget ">
-            <div class="single-footer-widget footer-redes">
-                <h6>Siguenos</h6>
-                <div class="footer-redes">
-                    <a href="https://www.facebook.com/saghn" target="_blank">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href="https://www.twitter.com/saghonduras" target="_blank">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="col-lg-6 col-md-6 col-sm-6">
-            <div class="single-footer-widget"></div>
-            <p class="footer-text">
-                Copyright &copy;
-                <script>document.write(new Date().getFullYear());</script> All rights reserved
-                <br> Estudiantes UNAH
-                <br> INGENIERIA DEL SOFTWARE</a>
-            </p>
-        </div>
-        </div>
-    </footer>
+                <?php
+					include("footer.php");
+					echo "footer.php";
+				?>	
 
     <script src="../js/jquery.min.js"></script>
     <script src="../js/vendor/jquery-2.2.4.min.js"></script>
